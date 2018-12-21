@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5c0e7543f16c2f046fee81e2"},"Number":{"$numberInt":"1"},"Time":{"$timestamp":{"t":1544451471,"i":1}},"MinRange":{"$numberInt":"16"},"MaxRange":{"$numberInt":"28"}}
+{"_id":{"$oid":"5c0ebb6852ea6b02855b02dd"},"Number":{"$numberInt":"2"},"Time":{"$timestamp":{"t":1544469403,"i":1}},"MinRange":{"$numberInt":"16"},"MaxRange":{"$numberInt":"29"}}
+{"_id":{"$oid":"5c1bc4e649189b02504ee7a2"},"Number":{"$numberInt":"3"},"Time":{"$timestamp":{"t":1544451471,"i":1}},"MinRange":{"$numberInt":"12"},"MaxRange":{"$numberInt":"26"}}
