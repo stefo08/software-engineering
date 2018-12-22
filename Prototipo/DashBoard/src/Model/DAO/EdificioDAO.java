@@ -1,6 +1,9 @@
 package Model.DAO;
 
+import com.mongodb.DBObject;
+
 public interface EdificioDAO {
 
-    public String getEdificioGestore(String username);
+    public DBObject getSensoriEdificio(String idEdificio);
+
 }

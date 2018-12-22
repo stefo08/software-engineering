@@ -1,8 +1,11 @@
 package Model.DAO;
 
+import Model.VO.Sensor;
 import com.mongodb.DBObject;
+
+import java.util.List;
 
 public interface SensorDAO {
 
-    public DBObject getSensoriEdificio(String edifcioID);
+    public List<Sensor> getSensoriEdificio(DBObject obj);
 }

@@ -3,20 +3,22 @@ package Model.DAO;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
+import org.bson.types.ObjectId;
 
 public class MongoDBEdificioDAOimpl implements EdificioDAO {
 
-    private String COLLECTION = "edificio";
+    private String COLLECTION = "Edificio";
     private MongoDBDAOFactory factory;
     private DBCollection edificioCollection = null;
 
+
     @Override
-    public String getEdificioGestore(String username) {
+    public DBObject getSensoriEdificio(String idEdificio) {
 
         edificioCollection = factory.createConnection().getCollection(COLLECTION);
-        DBObject obj = edificioCollection.findOne(new BasicDBObject().append("Username", "Angeloo"));
-        return (String) obj.get("Edifcio");
+        BasicDBObject query = new BasicDBObject().append("_id", new ObjectId(idEdificio));
+        DBObject edificio = edificioCollection.findOne(query);
+        return (DBObject) edificio.get("Sensor");
 
     }
-
 }
