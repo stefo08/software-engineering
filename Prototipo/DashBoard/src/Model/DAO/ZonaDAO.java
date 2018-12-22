@@ -1,4 +1,6 @@
 package Model.DAO;
 
-public class ZonaDAO {
+public interface ZonaDAO {
+
+    public boolean getEdifici();
 }

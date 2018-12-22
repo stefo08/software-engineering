@@ -14,7 +14,7 @@ public class MongoDBDAOFactory extends DAOFactory {
     private MongoClient client;
     private DB database;
 
-    public MongoDBDAOFactory(){
+    public DB createConnection(){
 
         try {
             client = new MongoClient(DRIVER, PORT);
@@ -28,6 +28,7 @@ public class MongoDBDAOFactory extends DAOFactory {
                 alert.showAndWait();
             }
             database = client.getDB(DATABASE);
+        return database;
     }
 
     @Override
