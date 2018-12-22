@@ -1,8 +1,7 @@
-package Model;
+package Model.VO;
 
 import java.util.ArrayList;
 import java.util.List;
-import Model.Edificio;
 
 public class Gestore {
 

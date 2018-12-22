@@ -1,6 +1,6 @@
 package sample;
 
-import Model.Sensor;
+import Model.VO.Sensor;
 import com.mongodb.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
