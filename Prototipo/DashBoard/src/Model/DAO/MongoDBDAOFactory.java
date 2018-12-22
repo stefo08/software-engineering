@@ -54,4 +54,7 @@ public class MongoDBDAOFactory extends DAOFactory {
         return new MongoDBZonaDAOimpl();
     }
 
+    @Override
+    public DataDAO getDataDAO() { return new MongoDBDataDAOimpl(); }
+
 }

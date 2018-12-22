@@ -13,6 +13,8 @@ public abstract class DAOFactory {
 
     public abstract ZonaDAO getZonaDAO();
 
+    public abstract DataDAO getDataDAO();
+
     public static DAOFactory getDAOFactory(int database) {
         switch (database) {
             case MONGODB:
