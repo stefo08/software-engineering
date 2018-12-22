@@ -1,4 +1,6 @@
 package Model.DAO;
 
-public class EdificioDAO {
+public interface EdificioDAO {
+
+    public String getEdificioGestore(String username);
 }

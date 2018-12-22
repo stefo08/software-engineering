@@ -1,4 +1,8 @@
 package Model.DAO;
 
-public class SensorDAO {
+import com.mongodb.DBObject;
+
+public interface SensorDAO {
+
+    public DBObject getSensoriEdificio(String edifcioID);
 }
