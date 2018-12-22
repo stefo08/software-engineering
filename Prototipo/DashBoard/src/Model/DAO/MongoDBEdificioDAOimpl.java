@@ -1,6 +1,8 @@
 package Model.DAO;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
 
 public class MongoDBEdificioDAOimpl implements EdificioDAO {
 
@@ -12,7 +14,8 @@ public class MongoDBEdificioDAOimpl implements EdificioDAO {
     public String getEdificioGestore(String username) {
 
         edificioCollection = factory.createConnection().getCollection(COLLECTION);
-        return null;
+        DBObject obj = edificioCollection.findOne(new BasicDBObject().append("Username", "Angeloo"));
+        return (String) obj.get("Edifcio");
 
     }
 

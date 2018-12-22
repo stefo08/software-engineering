@@ -14,6 +14,9 @@ public class MongoDBDAOFactory extends DAOFactory {
     private MongoClient client;
     private DB database;
 
+    /*
+        DB Connection, static for all classes. Is not necessary close the connection. MongoDB Drivers do it automatically;
+     */
     public DB createConnection(){
 
         try {
