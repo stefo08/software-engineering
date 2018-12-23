@@ -1,5 +1,6 @@
 package View;
 
+import Controller.DataController;
 import Controller.EdificioController;
 import Controller.GestoreController;
 import Controller.SensoreController;
@@ -29,6 +30,7 @@ public class DashBoardController implements Initializable {
     private GestoreController controllerGestore;
     private SensoreController controllerSensore;
     private EdificioController controllerEdificio;
+    private DataController controllerData;
 
     @Override
     public void initialize(URL location, ResourceBundle resource){
@@ -36,6 +38,7 @@ public class DashBoardController implements Initializable {
         controllerGestore = new GestoreController();
         controllerSensore = new SensoreController();
         controllerEdificio = new EdificioController();
+        controllerData = new DataController();
         listasensori = new ArrayList<Sensor>();
         Run();
 
@@ -77,18 +80,16 @@ public class DashBoardController implements Initializable {
             }
         });
 
-        /*Thread f = new Thread(){
+        Thread f = new Thread(){
             @Override
             public void run() {
                 while (true) {
                     for (Sensor s : listasensori) {
-                        DBCursor livesen = dataCollection.find(new BasicDBObject().append("IDSensore", s.getID()))
-                                .sort(new BasicDBObject("_id", -1)).limit(1);
-                        DBObject sen = livesen.next();
+                        Sensor temp = controllerData.getLastData(s.getID());
                         for (Object items : Table.getItems()) {
-                            Sensor temp = (Sensor) items;
-                            if (temp.getNumSensore() == ((int) sen.get("Number"))) {
-                                temp.setValue((int) sen.get("Temp"));
+                            Sensor temptable = (Sensor) items;
+                            if (temptable.getNumSensore() == temp.getNumSensore()){
+                                temptable.setValue((int) temp.getValue());
                                 items = (Object) temp;
                             }
                             Table.refresh();
@@ -101,7 +102,7 @@ public class DashBoardController implements Initializable {
                     }
                 }
             }
-        }; f.start();*/
+        }; f.start();
 
     }
 }

@@ -3,6 +3,7 @@ package Controller;
 import Model.DAO.DAOFactory;
 import Model.DAO.DataDAO;
 import Model.VO.Sensor;
+import com.mongodb.DBObject;
 
 public class DataController {
 
@@ -15,8 +16,9 @@ public class DataController {
         dataDAO = mongoDBFactory.getDataDAO();
     }
 
-    public void getLastData(Sensor s){
-
+    public Sensor getLastData(String idSensore){
+        Sensor s = dataDAO.getData(idSensore);
+        return s;
     }
 
 }
