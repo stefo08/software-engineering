@@ -69,7 +69,7 @@ public class DashBoardController implements Initializable {
             public void updateItem(Sensor item, boolean empty) {
                 super.updateItem(item, empty);
                 if (item == null) {
-                    setStyle("");
+                    setStyle("-fx-background-color: #fffff;");
                 } else {
                     int value = item.getValue(), max = item.getMaxRange(), min = item.getMinRange();
                     if (value > max + 3 || min < min - 3) setStyle("-fx-background-color: #9e0911;");
@@ -80,29 +80,26 @@ public class DashBoardController implements Initializable {
             }
         });
 
-        Thread f = new Thread(){
-            @Override
-            public void run() {
-                while (true) {
-                    for (Sensor s : listasensori) {
-                        Sensor temp = controllerData.getLastData(s.getID());
-                        for (Object items : Table.getItems()) {
-                            Sensor temptable = (Sensor) items;
-                            if (temptable.getNumSensore() == temp.getNumSensore()){
-                                temptable.setValue((int) temp.getValue());
-                                items = (Object) temp;
-                            }
-                            Table.refresh();
+        Thread f = new Thread(() -> {
+            while (true) {
+                for (Sensor s : listasensori) {
+                    Sensor temp = controllerData.getLastData(s.getID());
+                    for (Object items : Table.getItems()) {
+                        Sensor temptable = (Sensor) items;
+                        if (temptable.getNumSensore() == temp.getNumSensore()){
+                            temptable.setValue((int) temp.getValue());
+                            items = (Object) temp;
                         }
-                    }
-                    try {
-                        Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        Table.refresh();
                     }
                 }
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-        }; f.start();
+        }); f.start();
 
     }
 }
