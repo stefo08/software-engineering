@@ -1,4 +1,4 @@
-testRobot/D3/java-json.jar Thread2
+testRobot/D3/java-json.jar TestClassSimulator
 Thread normal priority
 Thread normal priority
 Thread high Priority
