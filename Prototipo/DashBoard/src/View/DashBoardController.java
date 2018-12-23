@@ -1,5 +1,8 @@
-package sample;
+package View;
 
+import Controller.EdificioController;
+import Controller.GestoreController;
+import Controller.SensoreController;
 import Model.VO.Sensor;
 import com.mongodb.*;
 import javafx.collections.FXCollections;
@@ -10,62 +13,41 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.bson.types.ObjectId;
 import java.net.URL;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class DashBoardController implements Initializable {
 
     @FXML
     private TableView Table;
     @FXML
     private TableColumn IDColumn, NumberColumn, ValueColumn;
 
-    private MongoClient client;
-    private DB database;
-    private DBCollection GestoreCollection;
-    private DBCollection EdificioCollection;
-    private DBCollection SensoriCollection;
-    private DBCollection dataCollection;
     private List<Sensor> listasensori;
+    private GestoreController controllerGestore;
+    private SensoreController controllerSensore;
+    private EdificioController controllerEdificio;
 
     @Override
     public void initialize(URL location, ResourceBundle resource){
-        try {
-            client = new MongoClient("localhost", 27018);
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
+
+        controllerGestore = new GestoreController();
+        controllerSensore = new SensoreController();
+        controllerEdificio = new EdificioController();
         listasensori = new ArrayList<Sensor>();
-        database = client.getDB("progetto");
-        GestoreCollection = database.getCollection("User");
-        EdificioCollection = database.getCollection("Edificio");
-        SensoriCollection = database.getCollection("Sensor");
-        dataCollection = database.getCollection("Data");
         Run();
 
     }
 
     private void Run(){
 
-        DBObject obj = GestoreCollection.findOne(new BasicDBObject().append("Username", "Angeloo"));
-        BasicDBObject query = new BasicDBObject().append("_id", new ObjectId((String) obj.get("Edificio")));
-        DBObject objedificio = EdificioCollection.findOne(query);
-        DBObject obj12 = (DBObject) objedificio.get("Sensori");
-        for (String key : obj12.keySet()){
-            DBObject sens = SensoriCollection.findOne(new BasicDBObject().append("_id", new ObjectId((String) obj12.get(key))));
-                System.out.println(sens.toString());
-                Sensor s = new Sensor();
-                s.setNumSensore((int) sens.get("Number"));
-                s.setMaxRange((int) sens.get("MaxRange"));
-                s.setMinRange((int) sens.get("MinRange"));
-                s.setID(sens.get("_id").toString());
-                listasensori.add(s);
-        }
-
+        String idEdificio = controllerGestore.getGestoreEdificio("Angelo");
+        DBObject sensori = controllerEdificio.getSensoriEdificio(idEdificio);
+        System.out.println(sensori);
+        listasensori = controllerSensore.getSensoriEdificio(sensori);
+        System.out.println(listasensori);
         ObservableList<Sensor> values = FXCollections.
                 observableArrayList();
         IDColumn.setCellValueFactory(new PropertyValueFactory<Sensor, String>("ID"));
@@ -95,7 +77,7 @@ public class Controller implements Initializable {
             }
         });
 
-        Thread f = new Thread(){
+        /*Thread f = new Thread(){
             @Override
             public void run() {
                 while (true) {
@@ -119,7 +101,7 @@ public class Controller implements Initializable {
                     }
                 }
             }
-        }; f.start();
+        }; f.start();*/
 
     }
 }

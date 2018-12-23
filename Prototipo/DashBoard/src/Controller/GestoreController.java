@@ -2,6 +2,7 @@ package Controller;
 
 import Model.DAO.DAOFactory;
 import Model.DAO.GestoreDAO;
+import com.mongodb.DBObject;
 
 public class GestoreController {
 
@@ -12,5 +13,12 @@ public class GestoreController {
     public GestoreController(){
         mongoDBFactory = DAOFactory.getDAOFactory(MONGODB);
         gestoreDAO = mongoDBFactory.getGestoreDAO();
+    }
+
+    public String getGestoreEdificio (String User){
+
+        String IDedificio = gestoreDAO.getGestoreEdificio(User);
+        return IDedificio;
+
     }
 }

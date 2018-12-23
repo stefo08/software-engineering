@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/EdificioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Model/Edificio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Model/Gestore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Model/Sensor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Model/Zona.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/sample/Controller$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/sample/Controller$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/sample/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/sample/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EdifcioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GestoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GestoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SensoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SensoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBEdificioDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBEdificioDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DAO/SensorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/SensorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DashBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestingUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -136,22 +157,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="26" />
+          <entry key="fxml" value="1" />
+          <entry key="java" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="26" />
+          <entry key="JAVA" value="41" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2728" />
+          <entry key="dummy" value="20" />
+          <entry key="java" value="4066" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2728" />
+          <entry key="JAVA" value="4066" />
+          <entry key="PLAIN_TEXT" value="20" />
         </counts>
       </usages-collector>
     </session>
@@ -162,31 +187,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/GestoreController.java">
+        <entry file="file://$PROJECT_DIR$/src/View/DashBoardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="34" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/EdifcioController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/SensoreController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="-330">
+              <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,19 +199,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ZonaController.java">
+        <entry file="file://$PROJECT_DIR$/src/Controller/DataController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="255">
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java">
+        <entry file="file://$PROJECT_DIR$/src/Controller/SensoreController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="51" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="51" />
+            <state relative-caret-position="451">
+              <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/EdificioController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="36" lean-forward="true" selection-start-line="7" selection-end-line="10" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -218,8 +249,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
+            <state relative-caret-position="157">
+              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -228,10 +259,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/DAO/DAOFactory.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+            <state relative-caret-position="135">
+              <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -239,8 +273,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+            <state relative-caret-position="165">
+              <caret line="11" column="95" selection-start-line="11" selection-start-column="95" selection-end-line="11" selection-end-column="95" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -249,10 +283,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/DAO/EdificioDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBZonaDAOimpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="90">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
+              <folding>
+                <element signature="e#120#121#0" expanded="true" />
+                <element signature="e#148#149#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -260,8 +298,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBEdificioDAOimpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="285">
+              <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -300,17 +338,22 @@
         <option value="$PROJECT_DIR$/src/Model/DAO/ZonaDAO.java" />
         <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBZonaDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/Model/DAO/GestoreDAO.java" />
-        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" />
-        <option value="$PROJECT_DIR$/src/Model/DAO/SensorDAO.java" />
-        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/Model/DAO/EdificioDAO.java" />
-        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBEdificioDAOimpl.java" />
-        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java" />
         <option value="$PROJECT_DIR$/src/Model/DAO/DAOFactory.java" />
-        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/Model/DAO/DataDAO.java" />
-        <option value="$PROJECT_DIR$/src/Controller/GestoreController.java" />
+        <option value="$PROJECT_DIR$/src/Model/DAO/SensorDAO.java" />
         <option value="$PROJECT_DIR$/src/Controller/SensoreController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/GestoreController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/EdifcioController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/EdificioController.java" />
+        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java" />
+        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBEdificioDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/sample/DashBoardController.java" />
+        <option value="$PROJECT_DIR$/src/View/DashBoardController.java" />
+        <option value="$PROJECT_DIR$/src/Controller/DataController.java" />
       </list>
     </option>
   </component>
@@ -404,7 +447,13 @@
               <item name="DashBoard" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="Model" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="VO" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="DAO" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DashBoard" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DashBoard" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="View" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -422,7 +471,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545575720676" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545579033788" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -463,12 +512,12 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <option name="MAIN_CLASS_NAME" value="View.Main" />
       <module name="DashBoard" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sample.*" />
+          <option name="PATTERN" value="View.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -534,15 +583,16 @@
       <workItem from="1545323389199" duration="1106000" />
       <workItem from="1545397823753" duration="165000" />
       <workItem from="1545490243724" duration="6517000" />
-      <workItem from="1545570839844" duration="555000" />
+      <workItem from="1545570839844" duration="3892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32738000" />
+    <option name="totallyTimeSpent" value="36075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="732" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.10743134" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -553,7 +603,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.14375" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.14375" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -566,7 +616,7 @@
       <window_info anchor="bottom" id="Event Log" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3296875" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="15" visible="true" weight="0.1828125" />
+      <window_info anchor="bottom" id="Terminal" order="15" weight="0.1828125" />
       <window_info anchor="bottom" id="Dependency Viewer" order="16" weight="0.3296875" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -723,21 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Dashboard.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/VO/Edificio.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -749,6 +784,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -787,17 +825,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/GestoreDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller.java" />
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/EdificioDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="36" />
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ZonaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/DAO/SensorDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="120">
+          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/GestoreDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/DAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/GestoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Dashboard.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="95" selection-start-line="11" selection-start-column="95" selection-end-line="11" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -805,14 +926,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
+          <folding>
+            <element signature="e#120#121#0" expanded="true" />
+            <element signature="e#148#149#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="104" column="54" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="54" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBEdificioDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -826,81 +960,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java">
+    <entry file="file://$PROJECT_DIR$/src/View/DashBoardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="-330">
+          <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/EdificioController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="51" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/DAOFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/EdificioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBEdificioDAOimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/EdifcioController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/GestoreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="34" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="34" />
+        <state relative-caret-position="150">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="7" selection-end-line="10" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -909,18 +982,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/SensoreController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="451">
+          <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ZonaController.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/DataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

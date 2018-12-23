@@ -1,6 +1,7 @@
 package Model.DAO;
 
 import com.mongodb.DB;
+import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 import javafx.scene.control.Alert;
 

@@ -9,14 +9,13 @@ import com.mongodb.DBObject;
 public class MongoDBDataDAOimpl implements DataDAO {
 
     private String COLLECTION = "Data";
-    private MongoDBDAOFactory factory;
-    private DBCollection dataCollection = null;
+    private MongoDBDAOFactory factory = new MongoDBDAOFactory();
+    private DBCollection dataCollection = factory.createConnection().getCollection(COLLECTION);
 
 
     @Override
     public Sensor getData(String idSensore) {
 
-        dataCollection = factory.createConnection().getCollection(COLLECTION);
         DBCursor livesen = dataCollection.find(new BasicDBObject().append("IDSensore", idSensore))
                 .sort(new BasicDBObject("_id", -1)).limit(1);
             DBObject sen = livesen.next();

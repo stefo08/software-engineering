@@ -7,8 +7,8 @@ import com.mongodb.DBObject;
 public class MongoDBGestoreDAOimpl implements GestoreDAO {
 
     private String COLLECTION = "User";
-    private MongoDBDAOFactory factory;
-    private DBCollection edificioCollection = null;
+    private MongoDBDAOFactory factory = new MongoDBDAOFactory();
+    private DBCollection edificioCollection = factory.createConnection().getCollection(COLLECTION);
 
     @Override
     public boolean CorrectLoginData(String username, String password) {
