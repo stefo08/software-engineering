@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Thread2 implements Runnable{
+public class TestClassSimulator implements Runnable{
 
     private MongoClient client;
     private DB database;
@@ -16,7 +16,7 @@ public class Thread2 implements Runnable{
     private  List<Sensors> highPrior;
     Random r;
 
-    public Thread2(){
+    public TestClassSimulator(){
 
         try {
             client = new MongoClient("localhost", 27018);
@@ -186,7 +186,7 @@ public class Thread2 implements Runnable{
 
         ExecutorService executor = Executors.newFixedThreadPool(10);
         for(int i = 0; i<20; i++) {
-            executor.execute(new Thread2());
+            executor.execute(new TestClassSimulator());
         }
     }
 
