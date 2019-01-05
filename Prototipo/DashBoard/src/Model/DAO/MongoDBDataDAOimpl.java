@@ -22,6 +22,7 @@ public class MongoDBDataDAOimpl implements DataDAO {
             Sensor s = new Sensor();
             s.setNumSensore((int) sen.get("Number"));
             s.setValue((int) sen.get("Temp"));
+            s.setTime(sen.get("TimeStamp").toString());
         return s;
 
     }

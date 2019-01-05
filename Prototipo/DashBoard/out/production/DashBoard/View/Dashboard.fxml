@@ -7,11 +7,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DashBoardController">
    <children>
-      <TableView fx:id="Table" layoutX="193.0" layoutY="14.0" prefHeight="371.0" prefWidth="391.0" style="-fx-background-color: 00000;">
+      <TableView fx:id="Table" layoutX="193.0" layoutY="14.0" prefHeight="371.0" prefWidth="391.0">
         <columns>
-          <TableColumn fx:id="IDColumn" prefWidth="255.0" text="ID" />
-          <TableColumn fx:id="NumberColumn" prefWidth="70.0" text="Numero" />
-            <TableColumn fx:id="ValueColumn" prefWidth="65.0" text="Valore" />
+          <TableColumn fx:id="IDColumn" prefWidth="174.0" text="ID" />
+          <TableColumn fx:id="NumberColumn" prefWidth="74.0" text="Numero" />
+            <TableColumn fx:id="ValueColumn" prefWidth="69.0" text="Valore" />
+            <TableColumn fx:id="DataColumn" prefWidth="73.0" text="Orario" />
         </columns>
       </TableView>
       <Button layoutX="52.0" layoutY="358.0" mnemonicParsing="false" text="Button" />

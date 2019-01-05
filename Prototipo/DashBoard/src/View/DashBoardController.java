@@ -24,7 +24,7 @@ public class DashBoardController implements Initializable {
     @FXML
     private TableView Table;
     @FXML
-    private TableColumn IDColumn, NumberColumn, ValueColumn;
+    private TableColumn IDColumn, NumberColumn, ValueColumn, DataColumn;
 
     private List<Sensor> listasensori;
     private GestoreController controllerGestore;
@@ -55,7 +55,8 @@ public class DashBoardController implements Initializable {
                 observableArrayList();
         IDColumn.setCellValueFactory(new PropertyValueFactory<Sensor, String>("ID"));
         NumberColumn.setCellValueFactory(new PropertyValueFactory<Sensor, Integer>("numSensore"));
-        ValueColumn.setCellValueFactory(new PropertyValueFactory<Sensor, String>("value"));
+        ValueColumn.setCellValueFactory(new PropertyValueFactory<Sensor, Integer>("value"));
+        DataColumn.setCellValueFactory(new PropertyValueFactory<Sensor, String>("Time"));
 
             for (Sensor s : listasensori){
                 values.add(s);
@@ -69,7 +70,7 @@ public class DashBoardController implements Initializable {
             public void updateItem(Sensor item, boolean empty) {
                 super.updateItem(item, empty);
                 if (item == null) {
-                    setStyle("-fx-background-color: #fffff;");
+                    setStyle("-fx-background-color: #ffffff;");
                 } else {
                     int value = item.getValue(), max = item.getMaxRange(), min = item.getMinRange();
                     if (value > max + 3 || min < min - 3) setStyle("-fx-background-color: #9e0911;");
@@ -87,7 +88,8 @@ public class DashBoardController implements Initializable {
                     for (Object items : Table.getItems()) {
                         Sensor temptable = (Sensor) items;
                         if (temptable.getNumSensore() == temp.getNumSensore()){
-                            temptable.setValue((int) temp.getValue());
+                            temptable.setValue(temp.getValue());
+                            temptable.setTime(temp.getTime());
                             items = (Object) temp;
                         }
                         Table.refresh();

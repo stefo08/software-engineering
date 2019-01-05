@@ -1,8 +1,14 @@
 
 import com.mongodb.*;
+
 import java.net.UnknownHostException;
-import java.util.*;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -14,6 +20,7 @@ public class TestClassSimulator implements Runnable{
     private DBCollection collection2;
     private List<Sensors> normalpriority;
     private  List<Sensors> highPrior;
+    private DateFormat format;
     Random r;
 
     public TestClassSimulator(){
@@ -29,6 +36,7 @@ public class TestClassSimulator implements Runnable{
         normalpriority = new ArrayList<Sensors>();
         highPrior = new ArrayList<Sensors>();
         generateNormalPriority();
+        format = new SimpleDateFormat("HH:mm:ss");
         r = new Random();
         Thread t = new Thread(this);
         t.start();
@@ -171,10 +179,13 @@ public class TestClassSimulator implements Runnable{
 
     private void sendPost(Sensors s, int faketemp)  {
 
+        Date data = new Date();
+        String time = format.format(data);
+
         DBObject sens = new BasicDBObject().append("Temp", faketemp).
                 append("IDSensore", s.getID() ).
                 append("Number", s.getNumSensore()).
-                append("TimeStamp", new Timestamp( new Date().getTime() ).toString() );
+                append("TimeStamp", time);
         collection2.insert(sens);
     }
 
