@@ -1,7 +1,6 @@
 package Model.DAO;
 
 import com.mongodb.DB;
-import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 import javafx.scene.control.Alert;
 
@@ -12,16 +11,17 @@ public class MongoDBDAOFactory extends DAOFactory {
     public static String DRIVER = "localhost";
     public static int PORT = 27018;
     public static String DATABASE = "progetto";
-    private MongoClient client;
-    private DB database;
 
     /*
         DB Connection, static for all classes. Is not necessary close the connection. MongoDB Drivers do it automatically;
      */
-    public DB createConnection(){
 
+    public static DB createConnection(){
+
+        DB database = null;
         try {
-            client = new MongoClient(DRIVER, PORT);
+            MongoClient client = new MongoClient(DRIVER, PORT);
+            database = client.getDB(DATABASE);
         } catch (UnknownHostException e)
             {e.printStackTrace();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -31,7 +31,6 @@ public class MongoDBDAOFactory extends DAOFactory {
                         + ":  Database Off-line");
                 alert.showAndWait();
             }
-            database = client.getDB(DATABASE);
         return database;
     }
 
