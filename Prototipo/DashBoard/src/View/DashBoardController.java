@@ -32,10 +32,10 @@ public class DashBoardController implements Initializable {
     private EdificioController controllerEdificio;
     private DataController controllerData;
 
-    /*
-    Il metodo initialize inizializza i Controller (Gestore, Sensore e Edificio)
-    Inizializza la lista che servirà a riempire la Table View
-    */
+    /**
+     * Il metodo initialize inizializza i Controller (Gestore, Sensore e Edificio)
+     * Inizializza la lista che servirà a riempire la Table View
+     */
 
     @Override
     public void initialize(URL location, ResourceBundle resource){
