@@ -145,6 +145,11 @@ public class DashBoardController implements Initializable {
         });
         f.start();
 
+        /**
+         * Il Thread si occupa della verifica della correttezza di funzionamento dei Sensori. Se passato un minuto da l'ultimo invio il Sensore non
+         * risponde, automaticamente viene mostrato un Warning, il valore nella Dashboard è posto a 0. Viene mostrato anche un Alert, che mostra al
+         * cliente l'effettivo malfunzionamento. Il controllo Avviene al lato Client per evitare sovraccarichi al Server.
+         */
 
         Thread ControlTime = new Thread(() -> {
 
