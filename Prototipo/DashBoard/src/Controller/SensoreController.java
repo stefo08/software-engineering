@@ -3,9 +3,8 @@ package Controller;
 import Model.DAO.DAOFactory;
 import Model.DAO.SensorDAO;
 import Model.VO.Sensor;
-import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,21 +23,18 @@ public class SensoreController {
 
     }
 
-    public List<Sensor> getSensoriEdificio(DBObject obj){
+    public List<Sensor> getSensoriEdificio(String Owner){
 
         List<Sensor> sensori = new ArrayList<Sensor>();
-
-        for (String key : obj.keySet()){
-
-            DBObject sens = sensoreDAO.getSensoriEdificio((String) obj.get(key));
-            System.out.println(sens.toString());
-                Sensor s = new Sensor();
-                    s.setNumSensore((int) sens.get("Number"));
-                    s.setMaxRange((int) sens.get("MaxRange"));
-                    s.setMinRange((int) sens.get("MinRange"));
-                    s.setID(sens.get("_id").toString());
+        DBCursor sens = sensoreDAO.getSensoriEdificio(Owner);
+        while(sens.hasNext()) {
+            DBObject temp = sens.next();
+            Sensor s = new Sensor();
+            s.setNumSensore((int) temp.get("Number"));
+            s.setMaxRange((int) temp.get("MaxRange"));
+            s.setMinRange((int) temp.get("MinRange"));
+            s.setID(temp.get("_id").toString());
             sensori.add(s);
-
         }
 
         return sensori;

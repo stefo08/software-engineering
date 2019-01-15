@@ -1,5 +1,9 @@
 package View;
 
+/**
+ * Software Engineering Project: Dashboard Ambientale
+ */
+
 import Controller.DataController;
 import Controller.EdificioController;
 import Controller.GestoreController;
@@ -57,9 +61,9 @@ public class DashBoardController implements Initializable {
     private void Run(){
 
         String idEdificio = controllerGestore.getGestoreEdificio("Angelo");
-        DBObject sensori = controllerEdificio.getSensoriEdificio(idEdificio);
-        System.out.println(sensori);
-        listasensori = controllerSensore.getSensoriEdificio(sensori);
+        //DBObject sensori = controllerEdificio.getSensoriEdificio(idEdificio);
+        //System.out.println(sensori);
+        listasensori = controllerSensore.getSensoriEdificio("Angelo");
         System.out.println(listasensori);
         ObservableList<Sensor> values = FXCollections.
                 observableArrayList();

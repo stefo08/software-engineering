@@ -2,6 +2,7 @@ package Model.DAO;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import org.bson.types.ObjectId;
 
@@ -12,9 +13,9 @@ public class MongoDBSensorDAOimpl implements SensorDAO {
     private DBCollection sensorCollection = factory.createConnection().getCollection(COLLECTION);
 
     @Override
-    public DBObject getSensoriEdificio(String id){
+    public DBCursor getSensoriEdificio(String Owner){
 
-        DBObject sens = sensorCollection.findOne(new BasicDBObject().append("_id", new ObjectId(id)));
+        DBCursor sens = sensorCollection.find(new BasicDBObject().append("Owner", Owner));
         return sens;
 
     }
