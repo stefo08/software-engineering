@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DashBoardController">
+   <children>
+      <DialogPane prefHeight="400.0" prefWidth="600.0" />
+      <TableView fx:id="Table" layoutX="14.0" layoutY="14.0" prefHeight="371.0" prefWidth="473.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="14.0">
+        <columns>
+          <TableColumn fx:id="IDColumn" prefWidth="174.0" text="ID" />
+          <TableColumn fx:id="NumberColumn" prefWidth="74.0" text="Numero" />
+            <TableColumn fx:id="ValueColumn" prefWidth="69.0" text="Valore" />
+            <TableColumn fx:id="DataColumn" prefWidth="73.0" text="Orario" />
+        </columns>
+      </TableView>
+      <Button layoutX="508.0" layoutY="174.0" mnemonicParsing="false" text="Conferma" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="174.0" />
+      <Label layoutX="508.0" layoutY="108.0" text="MIN" />
+      <Label layoutX="549.0" layoutY="108.0" text="MAX" />
+      <TextField layoutX="550.0" layoutY="137.0" prefHeight="18.0" prefWidth="23.0" />
+      <TextField layoutX="508.0" layoutY="136.0" prefHeight="26.0" prefWidth="23.0" />
+      <Label layoutX="494.0" layoutY="14.0" prefHeight="18.0" prefWidth="110.0" text="Seleziona il sensore" />
+      <Label layoutX="493.0" layoutY="32.0" prefHeight="18.0" prefWidth="98.0" text="e modifica i suoi " />
+      <Label layoutX="493.0" layoutY="50.0" text="valori" />
+   </children>
+</AnchorPane>

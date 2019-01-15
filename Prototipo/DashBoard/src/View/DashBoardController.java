@@ -12,12 +12,18 @@ import Model.VO.Sensor;
 import com.mongodb.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Button;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +31,10 @@ import java.util.ResourceBundle;
 
 public class DashBoardController implements Initializable {
 
+    @FXML
+    private AnchorPane rootPane;
+    @FXML
+    private Button modifica;
     @FXML
     private TableView Table;
     @FXML
@@ -130,5 +140,12 @@ public class DashBoardController implements Initializable {
         });
         f.start();
 
+    }
+
+    // al click del bottone carica la view della modifica dei valori
+    @FXML
+    private void caricaModificaValori(ActionEvent Event) throws IOException {
+        AnchorPane pane = FXMLLoader.load( getClass().getResource("ModificaValori.fxml"));
+        rootPane.getChildren().setAll(pane);
     }
 }
