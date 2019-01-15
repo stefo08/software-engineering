@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.Screen;
+import javafx.geometry.Rectangle2D;
 
 public class Main extends Application {
 
@@ -15,8 +17,15 @@ public class Main extends Application {
             primaryStage.setTitle("Dashboard - Home");
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setResizable(false);
+            primaryStage.setResizable(true);
             primaryStage.show();
+            Screen screen = Screen.getPrimary();
+            Rectangle2D bounds = screen.getVisualBounds();
+
+            primaryStage.setX(bounds.getMinX());
+            primaryStage.setY(bounds.getMinY());
+            primaryStage.setWidth(bounds.getWidth());
+            primaryStage.setHeight(bounds.getHeight());
         } catch (Exception e) {e.printStackTrace();}
     }
 

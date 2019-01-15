@@ -11,13 +11,19 @@ import Controller.SensoreController;
 import Model.VO.Sensor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Button;
+
+import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -30,6 +36,10 @@ import static java.lang.Integer.parseInt;
 
 public class DashBoardController implements Initializable {
 
+    @FXML
+    private AnchorPane rootPane;
+    @FXML
+    private Button modifica;
     @FXML
     private TableView Table;
     @FXML
@@ -175,5 +185,12 @@ public class DashBoardController implements Initializable {
         });
         ControlTime.start();
 
+    }
+
+    // al click del bottone carica la view della modifica dei valori
+    @FXML
+    private void caricaModificaValori(ActionEvent Event) throws IOException {
+        AnchorPane pane = FXMLLoader.load( getClass().getResource("ModificaValori.fxml"));
+        rootPane.getChildren().setAll(pane);
     }
 }
