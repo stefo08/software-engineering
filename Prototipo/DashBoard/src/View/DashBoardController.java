@@ -22,7 +22,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
-
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
@@ -154,20 +153,12 @@ public class DashBoardController implements Initializable {
                 Sensor tempor = (Sensor) item;
                 Date data = new Date();
                 String time = format.format(data);
-                String Currmin = String.valueOf(time.charAt(3)) +
-                        time.charAt(4);
-                String Currh = String.valueOf(time.charAt(0)) +
-                        time.charAt(1);
-                String Currsec = String.valueOf(time.charAt(6)) +
-                        time.charAt(7);
+                String Currmin = String.valueOf(time.charAt(3)) + time.charAt(4); String Currh = String.valueOf(time.charAt(0)) + time.charAt(1);
+                    String Currsec = String.valueOf(time.charAt(6)) + time.charAt(7);
                 String time2 = tempor.getTime();
                 if(time2 != null) {
-                    String Datah = String.valueOf(time2.charAt(0)) +
-                            time2.charAt(1);
-                    String datacur = String.valueOf(time2.charAt(3)) +
-                    time2.charAt(4);
-                    String Datasec = String.valueOf(time.charAt(6)) +
-                            time.charAt(7);
+                    String Datah = String.valueOf(time2.charAt(0)) + time2.charAt(1); String datacur = String.valueOf(time2.charAt(3)) + time2.charAt(4);
+                            String Datasec = String.valueOf(time.charAt(6)) + time.charAt(7);
                     if ((((parseInt(Currh) - parseInt(Datah)) > 0 ) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)||
                             (((parseInt(Currmin) - parseInt(datacur)) > 0) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)) {
                         System.out.println("Errore");

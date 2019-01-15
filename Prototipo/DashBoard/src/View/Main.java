@@ -19,13 +19,6 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             primaryStage.setResizable(true);
             primaryStage.show();
-            Screen screen = Screen.getPrimary();
-            Rectangle2D bounds = screen.getVisualBounds();
-
-            primaryStage.setX(bounds.getMinX());
-            primaryStage.setY(bounds.getMinY());
-            primaryStage.setWidth(bounds.getWidth());
-            primaryStage.setHeight(bounds.getHeight());
         } catch (Exception e) {e.printStackTrace();}
     }
 
