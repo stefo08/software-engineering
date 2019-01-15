@@ -9,19 +9,24 @@ import Controller.EdificioController;
 import Controller.GestoreController;
 import Controller.SensoreController;
 import Model.VO.Sensor;
-import com.mongodb.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import static java.lang.Integer.parseInt;
 
 public class DashBoardController implements Initializable {
 
@@ -35,6 +40,7 @@ public class DashBoardController implements Initializable {
     private SensoreController controllerSensore;
     private EdificioController controllerEdificio;
     private DataController controllerData;
+    private DateFormat format;
 
     /**
      * Il metodo initialize inizializza i Controller (Gestore, Sensore e Edificio)
@@ -49,6 +55,7 @@ public class DashBoardController implements Initializable {
         controllerEdificio = new EdificioController();
         controllerData = new DataController();
         listasensori = new ArrayList<Sensor>();
+        format = new SimpleDateFormat("HH:mm:ss");
         Run();
 
     }
@@ -60,10 +67,10 @@ public class DashBoardController implements Initializable {
 
     private void Run(){
 
-        String idEdificio = controllerGestore.getGestoreEdificio("Angelo");
+        //String idEdificio = controllerGestore.getGestoreEdificio("Angelo");
         //DBObject sensori = controllerEdificio.getSensoriEdificio(idEdificio);
         //System.out.println(sensori);
-        listasensori = controllerSensore.getSensoriEdificio("Angelo");
+        listasensori = controllerSensore.getSensoriEdificio("Alessandro");
         System.out.println(listasensori);
         ObservableList<Sensor> values = FXCollections.
                 observableArrayList();
@@ -116,7 +123,6 @@ public class DashBoardController implements Initializable {
                         if (temptable.getNumSensore() == temp.getNumSensore()){
                             temptable.setValue(temp.getValue());
                             temptable.setTime(temp.getTime());
-                            items = (Object) temp;
                         }
                         Table.refresh();
                     }
@@ -129,6 +135,45 @@ public class DashBoardController implements Initializable {
             }
         });
         f.start();
+
+
+        Thread ControlTime = new Thread(() -> {
+
+        while(true) {
+            for (Object item : Table.getItems()) {
+                Sensor tempor = (Sensor) item;
+                Date data = new Date();
+                String time = format.format(data);
+                String Currmin = String.valueOf(time.charAt(3)) +
+                        time.charAt(4);
+                String Currh = String.valueOf(time.charAt(0)) +
+                        time.charAt(1);
+                String Currsec = String.valueOf(time.charAt(6)) +
+                        time.charAt(7);
+                String time2 = tempor.getTime();
+                if(time2 != null) {
+                    String Datah = String.valueOf(time2.charAt(0)) +
+                            time2.charAt(1);
+                    String datacur = String.valueOf(time2.charAt(3)) +
+                    time2.charAt(4);
+                    String Datasec = String.valueOf(time.charAt(6)) +
+                            time.charAt(7);
+                    if ((((parseInt(Currh) - parseInt(Datah)) > 0 ) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)||
+                            (((parseInt(Currmin) - parseInt(datacur)) > 0) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)) {
+                        System.out.println("Errore");
+                    }
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+
+        });
+        ControlTime.start();
 
     }
 }

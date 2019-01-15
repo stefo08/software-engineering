@@ -11,6 +11,7 @@ public class Sensor implements Comparable<Sensor> {
     private int numSensore;
     private int value;
     private String Time;
+    private String tmcont;
 
     public Sensor(){
 
@@ -80,6 +81,16 @@ public class Sensor implements Comparable<Sensor> {
     public void setTime(String time) {
         Time = time;
     }
+
+    public String getTmcont() {
+        return tmcont;
+    }
+
+    public void setTmcont(String tmcont) {
+        this.tmcont = tmcont;
+    }
+
+
 
     @Override
     public int compareTo(Sensor other){
