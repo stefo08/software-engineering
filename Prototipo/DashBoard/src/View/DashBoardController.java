@@ -78,7 +78,7 @@ public class DashBoardController implements Initializable {
         //String idEdificio = controllerGestore.getGestoreEdificio("Angelo");
         //DBObject sensori = controllerEdificio.getSensoriEdificio(idEdificio);
         //System.out.println(sensori);
-        listasensori = controllerSensore.getSensoriEdificio("Alessandro");
+        listasensori = controllerSensore.getSensoriEdificio("Coppito 1");
         System.out.println(listasensori);
         ObservableList<Sensor> values = FXCollections.
                 observableArrayList();

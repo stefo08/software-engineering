@@ -13,9 +13,9 @@ public class MongoDBSensorDAOimpl implements SensorDAO {
     private DBCollection sensorCollection = factory.createConnection().getCollection(COLLECTION);
 
     @Override
-    public DBCursor getSensoriEdificio(String Owner){
+    public DBCursor getSensoriEdificio(String Edificio){
 
-        DBCursor sens = sensorCollection.find(new BasicDBObject().append("Owner", Owner));
+        DBCursor sens = sensorCollection.find(new BasicDBObject().append("Edificio", Edificio));
         return sens;
 
     }

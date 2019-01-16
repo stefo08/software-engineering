@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DashboardcittaController">
+    <children>
+        <DialogPane prefHeight="400.0" prefWidth="600.0" />
+        <TableView fx:id="Table" layoutX="14.0" layoutY="14.0" prefHeight="371.0" prefWidth="453.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="133.0" AnchorPane.topAnchor="14.0">
+            <columns>
+                <TableColumn fx:id="NameColumn" prefWidth="174.0" text="Nome Edificio" />
+                <TableColumn fx:id="ZoneColumn" prefWidth="195.0" text="Zona" />
+                <TableColumn fx:id="numColumn" prefWidth="83.0" text="n° Sensori" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

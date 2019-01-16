@@ -23,10 +23,10 @@ public class SensoreController {
 
     }
 
-    public List<Sensor> getSensoriEdificio(String Owner){
+    public List<Sensor> getSensoriEdificio(String Edificio){
 
         List<Sensor> sensori = new ArrayList<Sensor>();
-        DBCursor sens = sensoreDAO.getSensoriEdificio(Owner);
+        DBCursor sens = sensoreDAO.getSensoriEdificio(Edificio);
         while(sens.hasNext()) {
             DBObject temp = sens.next();
             Sensor s = new Sensor();
