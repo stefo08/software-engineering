@@ -11,6 +11,7 @@ import Model.VO.Sensor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,6 +21,8 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
@@ -33,6 +36,8 @@ import static java.lang.Integer.parseInt;
 
 public class DashboardcittaController implements Initializable {
 
+    @FXML
+    private Button logoutButton;
     @FXML
     private TableView Table;
     @FXML
@@ -130,6 +135,7 @@ public class DashboardcittaController implements Initializable {
         });
         f.start();
 
+<<<<<<< HEAD
         Thread controlError = new Thread(() -> {
             while (true) {
                 for(Object itemtab : Table.getItems()){
@@ -152,6 +158,19 @@ public class DashboardcittaController implements Initializable {
             }
         });
         controlError.start();
+=======
+    }
+>>>>>>> 7e63e65e0fd7e5943b1250d4fade8d39ea3f448e
 
+    @FXML
+    private void logout(){
+        try {
+            Stage stage = (Stage) logoutButton.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("loginPage.fxml"));
+            stage.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
