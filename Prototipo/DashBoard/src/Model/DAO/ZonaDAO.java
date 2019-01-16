@@ -1,6 +1,10 @@
 package Model.DAO;
 
+import Model.VO.Edificio;
+
+import java.util.List;
+
 public interface ZonaDAO {
 
-    public boolean getEdifici();
+    public List<Edificio> getEdifici(String User);
 }

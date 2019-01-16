@@ -4,11 +4,9 @@ package View;
  * Software Engineering Project: Dashboard Ambientale
  */
 
-import Controller.DataController;
-import Controller.EdificioController;
-import Controller.GestoreController;
-import Controller.SensoreController;
+import Controller.*;
 import Model.VO.Edificio;
+import Model.VO.Gestore;
 import Model.VO.Sensor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,12 +36,13 @@ public class DashboardcittaController implements Initializable {
     @FXML
     private TableView Table;
     @FXML
-    private TableColumn NameColumn, ZoneColumn, numColumn;
+    private TableColumn NameColumn, ZoneColumn, numColumn, GestoreColumn;
 
     private List<Edificio> listaedifici;
     private GestoreController controllerGestore;
     private SensoreController controllerSensore;
     private EdificioController controllerEdificio;
+    private ZonaController controllerZona;
     private DataController controllerData;
     private DateFormat format;
 
@@ -58,6 +57,7 @@ public class DashboardcittaController implements Initializable {
         controllerGestore = new GestoreController();
         controllerSensore = new SensoreController();
         controllerEdificio = new EdificioController();
+        controllerZona = new ZonaController();
         controllerData = new DataController();
         listaedifici = new ArrayList<Edificio>();
         format = new SimpleDateFormat("HH:mm:ss");
@@ -72,31 +72,21 @@ public class DashboardcittaController implements Initializable {
 
     private void Run(){
 
-
+        Gestore logged = controllerGestore.getLoggedGestore();
+        List<Edificio> lista = controllerZona.getEdificiCIttà(logged.getUser());
         ObservableList<Edificio> values = FXCollections.
                 observableArrayList();
-        NameColumn.setCellValueFactory(new PropertyValueFactory<Sensor, String>("Nome"));
-        ZoneColumn.setCellValueFactory(new PropertyValueFactory<Sensor, Integer>("Zona"));
-        numColumn.setCellValueFactory(new PropertyValueFactory<Sensor, Integer>("numeroSensori"));
+        NameColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Nome"));
+        ZoneColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Zona"));
+        GestoreColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Owner"));
+        //numColumn.setCellValueFactory(new PropertyValueFactory<Edificio, Integer>("numeroSensori"));
 
-        for (Edificio e : listaedifici){
+        for (Edificio e : lista){
             values.add(e);
         }
 
         Table.setItems(values);
 
-
-        Table.setRowFactory(tv -> new TableRow<Sensor>() {
-            @Override
-            public void updateItem(Sensor item, boolean empty) {
-                super.updateItem(item, empty);
-                if (item == null) {
-                    setStyle("-fx-background-color: #ffffff;");
-                } else {
-                    //Algoritmo % dei Sensori in Errore
-                }
-            }
-        });
 
         /**
          * Il thread è necessario per permettere la renderizzazione dei valori nella TableView in quanto l'aggiornamento sarebbe troppo veloce e non

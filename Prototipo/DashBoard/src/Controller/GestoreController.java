@@ -36,4 +36,8 @@ public class GestoreController {
     public void setGestoreLogged(Gestore log){
         loggedGestore = log;
     }
+
+    public Gestore getLoggedGestore(){
+        return loggedGestore;
+    }
     }

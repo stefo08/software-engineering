@@ -4,34 +4,54 @@ import java.util.List;
 
 public class Edificio {
 
-    private String Address;
-    private int Civic;
+    private String Nome;
+    private String Zona;
+    private int numSensori;
+    private String Owner;
     private List<Sensor> list;
 
     public Edificio(){
 
     }
 
-    public Edificio(String address, int civic, List<Sensor> list) {
-        this.Address = address;
-        this.Civic = civic;
+    public Edificio(String Nome, String zona, int num, String ow, List<Sensor> list) {
+        this.Nome = Nome;
         this.list = list;
+        this.Zona = zona;
+        this.numSensori = num;
+        this.Owner = ow;
     }
 
-    public String getAddress() {
-        return Address;
+    public String getNome() {
+        return Nome;
     }
 
-    public void setAddress(String address) {
-        Address = address;
+    public void setNome(String address) {
+        Nome = address;
     }
 
-    public int getCivic() {
-        return Civic;
+    public String getZona() {
+        return Zona;
     }
 
-    public void setCivic(int civic) {
-        Civic = civic;
+    public void setZona(String zona) {
+        Zona = zona;
+    }
+
+    public int getNumSensori() {
+        return numSensori;
+    }
+
+    public void setNumSensori(int numSensori) {
+        this.numSensori = numSensori;
+    }
+
+    public String getOwner() {
+        return Owner;
+    }
+
+    public void setOwner(String owner) {
+        Owner = owner;
     }
 
     public List<Sensor> getList() {
