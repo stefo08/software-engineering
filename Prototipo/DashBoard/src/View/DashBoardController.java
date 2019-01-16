@@ -9,22 +9,36 @@ import Controller.EdificioController;
 import Controller.GestoreController;
 import Controller.SensoreController;
 import Model.VO.Sensor;
-import com.mongodb.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Button;
+import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static java.lang.Integer.parseInt;
+
 public class DashBoardController implements Initializable {
 
+    @FXML
+    private AnchorPane rootPane;
+    @FXML
+    private Button modifica;
     @FXML
     private TableView Table;
     @FXML
@@ -35,6 +49,7 @@ public class DashBoardController implements Initializable {
     private SensoreController controllerSensore;
     private EdificioController controllerEdificio;
     private DataController controllerData;
+    private DateFormat format;
 
     /**
      * Il metodo initialize inizializza i Controller (Gestore, Sensore e Edificio)
@@ -49,6 +64,7 @@ public class DashBoardController implements Initializable {
         controllerEdificio = new EdificioController();
         controllerData = new DataController();
         listasensori = new ArrayList<Sensor>();
+        format = new SimpleDateFormat("HH:mm:ss");
         Run();
 
     }
@@ -63,7 +79,7 @@ public class DashBoardController implements Initializable {
         //String idEdificio = controllerGestore.getGestoreEdificio("Angelo");
         //DBObject sensori = controllerEdificio.getSensoriEdificio(idEdificio);
         //System.out.println(sensori);
-        listasensori = controllerSensore.getSensoriEdificio("Angelo");
+        listasensori = controllerSensore.getSensoriEdificio("Alessandro");
         System.out.println(listasensori);
         ObservableList<Sensor> values = FXCollections.
                 observableArrayList();
@@ -116,7 +132,6 @@ public class DashBoardController implements Initializable {
                         if (temptable.getNumSensore() == temp.getNumSensore()){
                             temptable.setValue(temp.getValue());
                             temptable.setTime(temp.getTime());
-                            items = (Object) temp;
                         }
                         Table.refresh();
                     }
@@ -130,5 +145,48 @@ public class DashBoardController implements Initializable {
         });
         f.start();
 
+        /**
+         * Il Thread si occupa della verifica della correttezza di funzionamento dei Sensori. Se passato un minuto da l'ultimo invio il Sensore non
+         * risponde, automaticamente viene mostrato un Warning, il valore nella Dashboard è posto a 0. Viene mostrato anche un Alert, che mostra al
+         * cliente l'effettivo malfunzionamento. Il controllo Avviene al lato Client per evitare sovraccarichi al Server.
+         */
+
+        Thread ControlTime = new Thread(() -> {
+
+        while(true) {
+            for (Object item : Table.getItems()) {
+                Sensor tempor = (Sensor) item;
+                Date data = new Date();
+                String time = format.format(data);
+                String Currmin = String.valueOf(time.charAt(3)) + time.charAt(4); String Currh = String.valueOf(time.charAt(0)) + time.charAt(1);
+                    String Currsec = String.valueOf(time.charAt(6)) + time.charAt(7);
+                String time2 = tempor.getTime();
+                if(time2 != null) {
+                    String Datah = String.valueOf(time2.charAt(0)) + time2.charAt(1); String datacur = String.valueOf(time2.charAt(3)) + time2.charAt(4);
+                            String Datasec = String.valueOf(time.charAt(6)) + time.charAt(7);
+                    if ((((parseInt(Currh) - parseInt(Datah)) > 0 ) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)||
+                            (((parseInt(Currmin) - parseInt(datacur)) > 0) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)) {
+                        System.out.println("Errore");
+                    }
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+
+        });
+        ControlTime.start();
+
+    }
+
+    // al click del bottone carica la view della modifica dei valori
+    @FXML
+    private void caricaModificaValori(ActionEvent Event) throws IOException {
+        AnchorPane pane = FXMLLoader.load( getClass().getResource("ModificaValori.fxml"));
+        rootPane.getChildren().setAll(pane);
     }
 }
