@@ -5,12 +5,20 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.loginPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.loginPageController">
    <children>
-      <TextField fx:id="username" layoutX="182.0" layoutY="86.0" promptText="username" />
-      <Button layoutX="235.0" layoutY="209.0" mnemonicParsing="false" onAction="#login" text="login" />
+      <TextField fx:id="username" layoutX="207.0" layoutY="156.0" prefHeight="26.0" prefWidth="186.0" />
+      <Button layoutX="278.0" layoutY="277.0" mnemonicParsing="false" onAction="#login" text="login" />
       <Label fx:id="getin" layoutX="248.0" layoutY="272.0" />
-      <PasswordField fx:id="password" layoutX="176.0" layoutY="146.0" />
+      <PasswordField fx:id="password" layoutX="207.0" layoutY="220.0" prefHeight="26.0" prefWidth="186.0" />
+      <Label layoutX="94.0" layoutY="47.0" text="Dashboard di monitraggio amibientale">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="207.0" layoutY="129.0" text="Username" />
+      <Label layoutX="207.0" layoutY="191.0" text="Password" />
    </children>
 </AnchorPane>
