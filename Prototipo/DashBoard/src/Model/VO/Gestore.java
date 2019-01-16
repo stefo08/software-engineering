@@ -77,4 +77,6 @@ public class Gestore {
     public void setSensori(List<Sensor> sensori) {
         this.sensori = sensori;
     }
+
+
 }

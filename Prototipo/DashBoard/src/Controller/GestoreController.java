@@ -21,4 +21,9 @@ public class GestoreController {
         return IDedificio;
 
     }
+
+
+    public boolean getin(String username, String password ) {
+        return gestoreDAO.CorrectLoginData(username, password);
+    }
 }
