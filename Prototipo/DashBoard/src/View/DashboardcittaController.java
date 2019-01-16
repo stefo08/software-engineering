@@ -46,11 +46,6 @@ public class DashboardcittaController implements Initializable {
     private DataController controllerData;
     private DateFormat format;
 
-    /**
-     * Il metodo initialize inizializza i Controller (Gestore, Sensore e Edificio)
-     * Inizializza la lista che servirà a riempire la Table View
-     */
-
     @Override
     public void initialize(URL location, ResourceBundle resource){
 
@@ -65,11 +60,6 @@ public class DashboardcittaController implements Initializable {
 
     }
 
-    /**
-     * Il metodo Run, passa al Controller Gestore l'User di chi ha effettuato l'accesso al sistema. I Controller recuperano, l'User, l'Edificio
-     * in suo possesso e i relativi sensori con i valori [min e max]. Viene inizializzata la Table View che servirà a mostrare i dati live al cliente
-     */
-
     private void Run(){
 
         Gestore logged = controllerGestore.getLoggedGestore();
@@ -79,7 +69,7 @@ public class DashboardcittaController implements Initializable {
         NameColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Nome"));
         ZoneColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Zona"));
         GestoreColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Owner"));
-        numColumn.setCellValueFactory(new PropertyValueFactory<Edificio, Integer>("numeroSensori"));
+        numColumn.setCellValueFactory(new PropertyValueFactory<Edificio, Integer>("numSensori"));
 
         for (Edificio e : lista){
             int count = 0;
@@ -93,24 +83,43 @@ public class DashboardcittaController implements Initializable {
             values.add(e);
         }
 
+
         Table.setItems(values);
 
 
-
-
-        /**
-         * Il thread è necessario per permettere la renderizzazione dei valori nella TableView in quanto l'aggiornamento sarebbe troppo veloce e non
-         * darebbe tempo a FX di listare i valori. Il thread attraverso un While(true) è in continua richiesta di nuovi valori dal server, Viene
-         * effettuato un controllo per ogni sensore presente, se il dato che arriva aggiorna un sensore, solleva il metodo sopra setRowFactory.
-         */
-
         Thread f = new Thread(() -> {
             while (true) {
-                //Codice che intercetta i nuovi valori dei Sensori
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                while (true) {
+                    /*for (Sensor s : listasensori) {
+                        Sensor temp = controllerData.getLastData(s.getID());
+                        for (Object items : Table.getItems()) {
+                            Sensor temptable = (Sensor) items;
+                            if (temptable.getNumSensore() == temp.getNumSensore()) {
+                                temptable.setValue(temp.getValue());
+                                temptable.setTime(temp.getTime());
+                            }
+                            Table.refresh();
+                        }
+                    }*/
+                    for(Edificio e : listaedifici){
+                        for(Sensor s : e.getList()){
+                            Sensor temp = controllerData.getLastData(s.getID());
+                            for (Object items : Table.getItems()) {
+                                Edificio ed = (Edificio) items;
+                                List<Sensor> ls = ed.getList();
+                                for(Sensor s2 : ls){
+                                    if (s.getNumSensore() == s2.getNumSensore()) {
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    try {
+                        Thread.sleep(10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
