@@ -16,14 +16,16 @@ public class MongoDBGestoreDAOimpl implements GestoreDAO {
 
     @Override
     public boolean CorrectLoginData(String username, String password) {
-   gestoreCollection= factory.createConnection().getCollection(COLLECTION);
     BasicDBObject allQuery = new BasicDBObject();
-    	    	BasicDBObject fields = new BasicDBObject();
+    DBObject query = new BasicDBObject().append("Username", username);
+    	    	/*BasicDBObject fields = new BasicDBObject();
     	    	fields.put("username", username);
-    	    	fields.put("password", password );
-    	    	DBCursor cursor = gestoreCollection.find(allQuery, fields);
-    	    	if (cursor.hasNext()) {
-    	    		return true;
+    	    	fields.put("password", password );*/
+    	    	DBCursor cursor = gestoreCollection.find(query);
+
+    	    	while (cursor.hasNext()) {
+    	    		DBObject user = cursor.next();
+    	    		if (((String) user.get("Password")).equals(password)) return true;
     	    	}
                                     return false;
 
