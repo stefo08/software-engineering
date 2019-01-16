@@ -2,6 +2,7 @@ package View;
 
 
 import Controller.GestoreController;
+import Model.VO.Gestore;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
@@ -31,12 +32,24 @@ public class loginPageController {
     public void login(ActionEvent actionEvent) {
         if (gestore.getin(username.getText(), password.getText())) {
             try {
-                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
-                Parent root = (Parent) fxmlLoader.load();
-                Stage stage1 = new Stage();
-                stage1.setScene(new Scene(root));
-                stage1.show();
+                Gestore single = gestore.getGestore(username.getText());
+                gestore.setGestoreLogged(single);
+                if (single.getRuolo().equals("Gestore edificio")) {
+                    ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
+                    Parent root = (Parent) fxmlLoader.load();
+                    Stage stage1 = new Stage();
+                    stage1.setScene(new Scene(root));
+                    stage1.show();
+                }
+                else {
+                    ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Dashboardcitta.fxml"));
+                    Parent root = (Parent) fxmlLoader.load();
+                    Stage stage1 = new Stage();
+                    stage1.setScene(new Scene(root));
+                    stage1.show();
+                }
             } catch(Exception e) {
                 e.printStackTrace();
             }

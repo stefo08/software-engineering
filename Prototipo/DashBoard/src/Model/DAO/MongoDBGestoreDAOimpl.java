@@ -1,5 +1,6 @@
 package Model.DAO;
 
+import Model.VO.Gestore;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
@@ -24,6 +25,22 @@ public class MongoDBGestoreDAOimpl implements GestoreDAO {
         if ((user.get("Password")).equals(password)) return true;
     }
     return false;
+    }
+
+    @Override
+    public Gestore getGestoreInfo(String Username){
+        DBCursor gest = gestoreCollection.find(new BasicDBObject()
+                .append("Username", Username));
+        Gestore gestore = new Gestore();
+        while(gest.hasNext()){
+            DBObject obj = gest.next();
+            gestore.setName((String )obj.get("Name"));
+            gestore.setSurname((String) obj.get("Surname"));
+            gestore.setUser((String) obj.get("Username"));
+            gestore.setPassword((String) obj.get("Password"));
+            gestore.setRuolo((String) obj.get("Ruolo"));
+        }
+        return gestore;
     }
 
     @Override

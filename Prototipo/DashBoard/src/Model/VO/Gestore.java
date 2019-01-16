@@ -13,11 +13,15 @@ public class Gestore {
     private List<?> sensori;
     private String ruolo;
 
-    public Gestore(String edificio){
+    /*public Gestore(String edificio){
 
         if (this.ruolo.equals("Edificio"))
         sensori = new ArrayList<Edificio>();
         else sensori = new ArrayList<Zona>();
+
+    }*/
+
+    public Gestore(){
 
     }
 
@@ -74,9 +78,15 @@ public class Gestore {
         return sensori;
     }
 
-    public void setSensori(List<Sensor> sensori) {
+    public void setSensori(List<?> sensori) {
         this.sensori = sensori;
     }
 
+    public String getRuolo() {
+        return ruolo;
+    }
 
+    public void setRuolo(String ruolo) {
+        this.ruolo = ruolo;
+    }
 }

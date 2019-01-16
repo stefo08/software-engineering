@@ -72,6 +72,7 @@ public class DashboardcittaController implements Initializable {
 
     private void Run(){
 
+
         ObservableList<Edificio> values = FXCollections.
                 observableArrayList();
         NameColumn.setCellValueFactory(new PropertyValueFactory<Sensor, String>("Nome"));

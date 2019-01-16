@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d0cfbfd-1474-4311-a6f6-94a61ad16a59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Controller/SensoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/Controller/SensoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/MongoDBGestoreDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/MongoDBGestoreDAOimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/MongoDBSensorDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/MongoDBSensorDAOimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/loginPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/loginPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SensoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SensoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GestoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GestoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DAO/GestoreDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/GestoreDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/VO/Gestore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/VO/Gestore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Dashboardcitta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Dashboardcitta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/DashboardcittaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DashboardcittaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/loginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/loginPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestingUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestingUnity/out/test/TestingUnity/TestClassSimulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/out/test/TestingUnity/TestClassSimulator.class" afterDir="false" />
@@ -36,24 +31,24 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="3" />
-          <entry key="java" value="13" />
+          <entry key="java" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="13" />
+          <entry key="JAVA" value="22" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="java" value="577" />
+          <entry key="java" value="1330" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="577" />
+          <entry key="JAVA" value="1330" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
@@ -73,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/DashboardcittaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+            <state relative-caret-position="705">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
               <folding>
                 <element signature="e#2879#3671#0" expanded="true" />
                 <element signature="e#3670#3671#0" expanded="true" />
@@ -83,47 +78,54 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="30" column="33" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/VO/Gestore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2">
+              <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <folding>
+                <element signature="e#1510#1511#0" expanded="true" />
+                <element signature="e#1548#1549#0" expanded="true" />
+                <element signature="e#1580#1581#0" expanded="true" />
+                <element signature="e#1608#1609#0" expanded="true" />
+                <element signature="e#1650#1651#0" expanded="true" />
+                <element signature="e#1684#1685#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/DashBoardController.java">
+        <entry file="file://$PROJECT_DIR$/src/View/loginPageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+            <state relative-caret-position="208">
+              <caret line="35" column="49" lean-forward="true" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/SensoreController.java">
+        <entry file="file://$PROJECT_DIR$/src/Controller/GestoreController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="17" column="93" selection-start-line="17" selection-start-column="93" selection-end-line="17" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="18" column="84" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/EdificioController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="54" lean-forward="true" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+            <state relative-caret-position="77">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+              <folding>
+                <element signature="e#644#645#0" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
+                <element signature="e#626#627#0" expanded="true" />
+                <element signature="e#696#697#0" expanded="true" />
+                <element signature="e#922#923#0" expanded="true" />
+                <element signature="e#957#958#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,15 +146,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/View/DashboardCittà.fxml" />
         <option value="$PROJECT_DIR$/src/View/DashBoardCittaController.java" />
         <option value="$PROJECT_DIR$/src/View/Dashboardcitta.fxml" />
-        <option value="$PROJECT_DIR$/src/View/loginPageController.java" />
         <option value="$PROJECT_DIR$/src/View/DashBoardController.java" />
         <option value="$PROJECT_DIR$/src/Controller/SensoreController.java" />
         <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/View/DashboardcittaController.java" />
+        <option value="$PROJECT_DIR$/src/Model/VO/Gestore.java" />
+        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" />
+        <option value="$PROJECT_DIR$/src/Model/DAO/GestoreDAO.java" />
+        <option value="$PROJECT_DIR$/src/Controller/GestoreController.java" />
+        <option value="$PROJECT_DIR$/src/View/loginPageController.java" />
       </list>
     </option>
   </component>
@@ -208,6 +214,13 @@
               <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
               <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="VO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -220,7 +233,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547645410122" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547647348725" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -264,12 +277,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547641175450</updated>
-      <workItem from="1547641185060" duration="3137000" />
+      <workItem from="1547641185060" duration="4760000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3137000" />
+    <option name="totallyTimeSpent" value="4760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="734" extended-state="0" />
@@ -280,7 +293,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08077545" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08077545" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.32866043" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -289,7 +302,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17601246" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17601246" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -319,20 +332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/GestoreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Dashboardcitta.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -348,28 +347,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/loginPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/EdificioController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="54" lean-forward="true" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/DashboardcittaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
-          <folding>
-            <element signature="e#2879#3671#0" expanded="true" />
-            <element signature="e#3670#3671#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -404,8 +385,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/DashBoardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="19">
           <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DashboardcittaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="e#2879#3671#0" expanded="true" />
+            <element signature="e#3670#3671#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/GestoreDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/VO/Gestore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding>
+            <element signature="e#1510#1511#0" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
+            <element signature="e#1580#1581#0" expanded="true" />
+            <element signature="e#1608#1609#0" expanded="true" />
+            <element signature="e#1650#1651#0" expanded="true" />
+            <element signature="e#1684#1685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/GestoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding>
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#957#958#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/loginPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="35" column="49" lean-forward="true" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
         </state>
       </provider>
     </entry>
