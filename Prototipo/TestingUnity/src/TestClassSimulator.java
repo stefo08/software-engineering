@@ -26,7 +26,7 @@ public class TestClassSimulator implements Runnable{
     public TestClassSimulator(){
 
         try {
-            client = new MongoClient("localhost", 27018);
+            client = new MongoClient("localhost", 27017);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
