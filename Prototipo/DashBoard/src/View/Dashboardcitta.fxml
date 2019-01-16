@@ -11,7 +11,7 @@
         <TableView fx:id="Table" layoutX="14.0" layoutY="14.0" prefHeight="371.0" prefWidth="453.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="133.0" AnchorPane.topAnchor="14.0">
             <columns>
                 <TableColumn fx:id="NameColumn" prefWidth="174.0" text="Nome Edificio" />
-            <TableColumn fx:id="NameColumn1" prefWidth="104.0" text="Gestore" />
+            <TableColumn fx:id="GestoreColumn" prefWidth="104.0" text="Gestore" />
                 <TableColumn fx:id="ZoneColumn" prefWidth="101.0" text="Zona" />
                 <TableColumn fx:id="numColumn" prefWidth="73.0" text="n° Sensori" />
             </columns>

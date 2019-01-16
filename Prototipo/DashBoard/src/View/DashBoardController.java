@@ -8,6 +8,7 @@ import Controller.DataController;
 import Controller.EdificioController;
 import Controller.GestoreController;
 import Controller.SensoreController;
+import Model.VO.Gestore;
 import Model.VO.Sensor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -75,7 +76,8 @@ public class DashBoardController implements Initializable {
 
     private void Run(){
 
-        //String idEdificio = controllerGestore.getGestoreEdificio("Angelo");
+        Gestore sessiongest = controllerGestore.getLoggedGestore();
+        String idEdificio = controllerGestore.getGestoreEdificio(sessiongest.getUser());
         //DBObject sensori = controllerEdificio.getSensoriEdificio(idEdificio);
         //System.out.println(sensori);
         listasensori = controllerSensore.getSensoriEdificio("Coppito 1");
