@@ -79,13 +79,23 @@ public class DashboardcittaController implements Initializable {
         NameColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Nome"));
         ZoneColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Zona"));
         GestoreColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Owner"));
-        //numColumn.setCellValueFactory(new PropertyValueFactory<Edificio, Integer>("numeroSensori"));
+        numColumn.setCellValueFactory(new PropertyValueFactory<Edificio, Integer>("numeroSensori"));
 
         for (Edificio e : lista){
+            int count = 0;
+            List<Sensor> listasensori= controllerSensore.getSensoriEdificio(e.getNome());
+            e.setList(listasensori);
+            for (Sensor s : listasensori){
+                count++;
+            }
+            System.out.println(count);
+            e.setNumSensori(count);
             values.add(e);
         }
 
         Table.setItems(values);
+
+
 
 
         /**
