@@ -9,6 +9,7 @@ public class Edificio {
     private int numSensori;
     private String Owner;
     private List<Sensor> list;
+    private int levelerror;
 
     public Edificio(){
 
@@ -60,5 +61,13 @@ public class Edificio {
 
     public void setList(List<Sensor> list) {
         this.list = list;
+    }
+
+    public int getLevelerror() {
+        return levelerror;
+    }
+
+    public void setLevelerror(int levelerror) {
+        this.levelerror = levelerror;
     }
 }

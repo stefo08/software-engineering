@@ -63,7 +63,7 @@ public class DashboardcittaController implements Initializable {
     private void Run(){
 
         Gestore logged = controllerGestore.getLoggedGestore();
-        List<Edificio> lista = controllerZona.getEdificiCIttà(logged.getUser());
+        listaedifici = controllerZona.getEdificiCIttà(logged.getUser());
         ObservableList<Edificio> values = FXCollections.
                 observableArrayList();
         NameColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Nome"));
@@ -71,7 +71,7 @@ public class DashboardcittaController implements Initializable {
         GestoreColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Owner"));
         numColumn.setCellValueFactory(new PropertyValueFactory<Edificio, Integer>("numSensori"));
 
-        for (Edificio e : lista){
+        for (Edificio e : listaedifici){
             int count = 0;
             List<Sensor> listasensori= controllerSensore.getSensoriEdificio(e.getNome());
             e.setList(listasensori);
@@ -86,21 +86,25 @@ public class DashboardcittaController implements Initializable {
 
         Table.setItems(values);
 
+        Table.setRowFactory(tv -> new TableRow<Edificio>() {
+            @Override
+            public void updateItem(Edificio item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null) {
+                    setStyle("-fx-background-color: #ffffff;");
+                } else {
+                    if ( item.getLevelerror() == 1 ){
+                        setStyle("-fx-background-color: #007000;");
+                    }
+                    else if(item.getLevelerror() == 2 ) setStyle("-fx-background-color: #c97101;");
+                    else setStyle("-fx-background-color: #840910;");
+                }
+            }
+        });
+
 
         Thread f = new Thread(() -> {
             while (true) {
-                while (true) {
-                    /*for (Sensor s : listasensori) {
-                        Sensor temp = controllerData.getLastData(s.getID());
-                        for (Object items : Table.getItems()) {
-                            Sensor temptable = (Sensor) items;
-                            if (temptable.getNumSensore() == temp.getNumSensore()) {
-                                temptable.setValue(temp.getValue());
-                                temptable.setTime(temp.getTime());
-                            }
-                            Table.refresh();
-                        }
-                    }*/
                     for(Edificio e : listaedifici){
                         for(Sensor s : e.getList()){
                             Sensor temp = controllerData.getLastData(s.getID());
@@ -108,23 +112,46 @@ public class DashboardcittaController implements Initializable {
                                 Edificio ed = (Edificio) items;
                                 List<Sensor> ls = ed.getList();
                                 for(Sensor s2 : ls){
-                                    if (s.getNumSensore() == s2.getNumSensore()) {
-                                        
+                                    if (temp.getNumSensore() == s2.getNumSensore()) {
+                                        s2.setValue(temp.getValue());
+                                        s2.setTime(temp.getTime());
                                     }
+                                    Table.refresh();
                                 }
                             }
                         }
                     }
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }
             }
         });
         f.start();
 
+        Thread controlError = new Thread(() -> {
+            while (true) {
+                for(Object itemtab : Table.getItems()){
+                    Edificio e = (Edificio) itemtab;
+                    int count = e.getNumSensori();
+                    int err = 0;
+                    for (Sensor s : e.getList()){
+                        if (s.getValue() > s.getMaxRange() || s.getValue() < s.getMaxRange());
+                        err++;
+                    }
+                    if ((err/count) > 0.6) {e.setLevelerror(3); Table.refresh();}
+                    else if ((err/count) > 0.3)  {e.setLevelerror(2); Table.refresh();}
+                    else {e.setLevelerror(1); Table.refresh();}
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        controlError.start();
 
     }
 }
