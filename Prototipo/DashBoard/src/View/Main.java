@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            AnchorPane root = FXMLLoader.load( getClass().getResource("Dashboard.fxml"));
+            AnchorPane root = FXMLLoader.load( getClass().getResource("loginPage.fxml"));
             primaryStage.setTitle("Dashboard - Home");
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);

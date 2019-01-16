@@ -60,7 +60,7 @@ public class DashBoardController implements Initializable {
 
     private void Run(){
 
-        String idEdificio = controllerGestore.getGestoreEdificio("Angelo");
+        //String idEdificio = controllerGestore.getGestoreEdificio("Angelo");
         //DBObject sensori = controllerEdificio.getSensoriEdificio(idEdificio);
         //System.out.println(sensori);
         listasensori = controllerSensore.getSensoriEdificio("Angelo");
