@@ -35,7 +35,9 @@ public class DashBoardController implements Initializable {
     @FXML
     private AnchorPane rootPane;
     @FXML
-    private Button modifica;
+    private Button logoutButton, modificaButton;
+    @FXML
+    private TextField max, min;
     @FXML
     private TableView Table;
     @FXML
@@ -185,11 +187,15 @@ public class DashBoardController implements Initializable {
         ControlTime.start();
 
     }
-
-    // al click del bottone carica la view della modifica dei valori
     @FXML
-    private void caricaModificaValori(ActionEvent Event) throws IOException {
-        AnchorPane pane = FXMLLoader.load( getClass().getResource("ModificaValori.fxml"));
+    private void modifica(ActionEvent Event) throws IOException {
+        
+    }
+
+    @FXML
+    private void logout(ActionEvent Event) throws IOException {
+        AnchorPane pane = FXMLLoader.load( getClass().getResource("loginPage.fxml"));
         rootPane.getChildren().setAll(pane);
     }
+
 }
