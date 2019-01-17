@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cec6b63-b78b-4176-8f6b-a025952fb6c8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../DashBoard/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Model/DAO/MongoDBDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Model/DAO/MongoDBDAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Model/DAO/MongoDBGestoreDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Model/DAO/MongoDBGestoreDAOimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/DashboardcittaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/DashboardcittaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/MongoDBDataDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/MongoDBDataDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/MongoDBGestoreDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/MongoDBGestoreDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/src/View/DashboardcittaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/View/DashboardcittaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/src/View/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/View/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/TestingUnity/TestClassSimulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/TestingUnity/TestClassSimulator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DashBoard/src/Controller/SensoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/Controller/SensoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/MongoDBSensorDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/MongoDBSensorDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/SensorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/SensorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DashBoard/src/View/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/View/DashBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DashBoard/src/View/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/View/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DashBoard/src/View/ModificaValori.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestClassSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestClassSimulator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -108,7 +103,7 @@
         <counts>
           <entry key="project.closed" value="17" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -116,7 +111,7 @@
           <entry key="project.open.time.7" value="5" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -167,7 +162,7 @@
         <entry file="file://$PROJECT_DIR$/src/TestClassSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="329">
-              <caret line="153" column="44" selection-start-line="153" selection-start-column="44" selection-end-line="153" selection-end-column="44" />
+              <caret line="157" column="44" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -217,7 +212,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="734" />
@@ -230,8 +225,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,6 +241,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -383,6 +378,7 @@
       <workItem from="1547641188349" duration="4274000" />
       <workItem from="1547658425362" duration="964000" />
       <workItem from="1547735972135" duration="6760000" />
+      <workItem from="1547752069534" duration="222000" />
     </task>
     <servers />
   </component>
@@ -401,12 +397,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117515000" />
+    <option name="totallyTimeSpent" value="117737000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="734" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="734" extended-state="1" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976744" visible="true" weight="0.12600969" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976744" visible="true" weight="0.1276252" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -422,7 +418,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.17160687" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.17133956" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.20436817" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -542,7 +538,7 @@
     <entry file="file://$PROJECT_DIR$/src/TestClassSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
-          <caret line="153" column="44" selection-start-line="153" selection-start-column="44" selection-end-line="153" selection-end-column="44" />
+          <caret line="157" column="44" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

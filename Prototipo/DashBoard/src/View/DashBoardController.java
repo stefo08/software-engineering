@@ -10,6 +10,9 @@ import Controller.GestoreController;
 import Controller.SensoreController;
 import Model.VO.Gestore;
 import Model.VO.Sensor;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -52,6 +55,7 @@ public class DashBoardController implements Initializable {
     private EdificioController controllerEdificio;
     private DataController controllerData;
     private DateFormat format;
+    Sensor sensore;
 
     /**
      * Il metodo initialize inizializza i Controller (Gestore, Sensore e Edificio)
@@ -67,6 +71,7 @@ public class DashBoardController implements Initializable {
         controllerData = new DataController();
         listasensori = new ArrayList<Sensor>();
         format = new SimpleDateFormat("HH:mm:ss");
+        sensore = new Sensor();
         Run();
 
     }
@@ -174,7 +179,7 @@ public class DashBoardController implements Initializable {
                         Platform.runLater(new Runnable() {
                             @Override
                             public void run() {
-                                System.out.println("Errore");
+                                //System.out.println("Errore");
                                /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
                                 alert.setTitle("Errore: Sensore " +((Sensor) item).getNumSensore() +" " +
                                         "offline da 1 minuto");
@@ -203,15 +208,27 @@ public class DashBoardController implements Initializable {
     @FXML
     public void clickItem(MouseEvent event)
     {
-        if (event.getClickCount() == 2) //Checking double click
+        if (event.getClickCount() == 1) //Checking double click
         {
-            System.out.println(IDColumn.getCellValueFactory());
+            sensore = (Sensor) Table.getSelectionModel().getSelectedItem();
+            System.out.println(sensore.getID());
         }
     }
 
     @FXML
     private void modifica(ActionEvent Event) throws IOException {
-        
+        if(sensore!=null) {
+            if (parseInt(min.getText()) < parseInt(max.getText()) || min == null || max == null) {
+                if (min.getText() != null) {
+                    sensore.setMinRange(parseInt(min.getText()));
+                    controllerSensore.updateRangeSensoreMin(sensore.getID(), parseInt(min.getText()));
+                }
+                if (max.getText() != null) {
+                    sensore.setMaxRange(parseInt(max.getText()));
+                    controllerSensore.updateRangeSensoreMax(sensore.getID(), parseInt(max.getText()));
+                }
+            }
+        }
     }
 
     @FXML

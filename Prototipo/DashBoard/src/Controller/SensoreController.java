@@ -3,11 +3,14 @@ package Controller;
 import Model.DAO.DAOFactory;
 import Model.DAO.SensorDAO;
 import Model.VO.Sensor;
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.Integer.parseInt;
 
 public class SensoreController {
 
@@ -40,4 +43,11 @@ public class SensoreController {
         return sensori;
     }
 
+    public void updateRangeSensoreMax(String id, int max){
+        sensoreDAO.updateRangeSensoreMax(id, max);
+    }
+
+    public void updateRangeSensoreMin(String id, int min){
+        sensoreDAO.updateRangeSensoreMax(id, min);
+    }
 }

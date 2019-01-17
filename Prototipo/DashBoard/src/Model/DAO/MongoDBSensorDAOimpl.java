@@ -19,4 +19,14 @@ public class MongoDBSensorDAOimpl implements SensorDAO {
         return sens;
 
     }
+
+    public void updateRangeSensoreMax(String id, int max){
+        DBObject test = sensorCollection.findOne(new BasicDBObject().append("_id", new ObjectId(id)));
+        sensorCollection.update(test, new BasicDBObject("MinRange", max));
+    }
+
+    public void updateRangeSensoreMin(String id, int min){
+        DBObject test = sensorCollection.findOne(new BasicDBObject().append("_id", new ObjectId(id)));
+        sensorCollection.update(test, new BasicDBObject("MinRange", min));
+    }
 }
