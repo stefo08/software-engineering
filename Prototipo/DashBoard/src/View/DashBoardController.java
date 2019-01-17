@@ -10,6 +10,7 @@ import Controller.GestoreController;
 import Controller.SensoreController;
 import Model.VO.Gestore;
 import Model.VO.Sensor;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -205,7 +206,7 @@ public class DashBoardController implements Initializable {
     {
         if (event.getClickCount() == 2) //Checking double click
         {
-            System.out.println(IDColumn.getCellValueFactory());
+            System.out.println(IDColumn.getId());
         }
     }
 
