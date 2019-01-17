@@ -8,7 +8,7 @@ import java.net.UnknownHostException;
 
 public class MongoDBDAOFactory extends DAOFactory {
 
-    public static String DRIVER = "10.178.64.247";
+    public static String DRIVER = "localhost";
     public static int PORT = 27017;
     public static String DATABASE = "progetto";
 
@@ -22,14 +22,8 @@ public class MongoDBDAOFactory extends DAOFactory {
         try {
             MongoClient client = new MongoClient(DRIVER, PORT);
             database = client.getDB(DATABASE);
-        } catch (UnknownHostException e)
-            {e.printStackTrace();
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Errore accesso al Database");
-                alert.setHeaderText(null);
-                alert.setContentText("Connection problem: " +e.getMessage() +"//localhost:" +PORT
-                        + ":  Database Off-line");
-                alert.showAndWait();
+        } catch (UnknownHostException e) {
+                e.printStackTrace();
             }
         return database;
     }

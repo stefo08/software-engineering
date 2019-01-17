@@ -135,7 +135,7 @@ public class DashboardcittaController implements Initializable {
         });
         f.start();
 
-<<<<<<< HEAD
+
         Thread controlError = new Thread(() -> {
             while (true) {
                 for(Object itemtab : Table.getItems()){
@@ -158,9 +158,7 @@ public class DashboardcittaController implements Initializable {
             }
         });
         controlError.start();
-=======
     }
->>>>>>> 7e63e65e0fd7e5943b1250d4fade8d39ea3f448e
 
     @FXML
     private void logout(){
