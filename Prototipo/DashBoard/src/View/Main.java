@@ -13,6 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
         try {
             AnchorPane root = FXMLLoader.load( getClass().getResource("loginPage.fxml"));
             primaryStage.setTitle("Dashboard - Home");
@@ -22,6 +23,7 @@ public class Main extends Application {
             primaryStage.setResizable(true);
             primaryStage.show();
         } catch (Exception e) {e.printStackTrace();}
+
     }
 
 

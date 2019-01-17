@@ -123,7 +123,7 @@ public class DashboardcittaController implements Initializable {
                         }
                     }
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(10);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -133,28 +133,32 @@ public class DashboardcittaController implements Initializable {
 
 
         Thread controlError = new Thread(() -> {
+
             while (true) {
                 for(Object itemtab : Table.getItems()){
                     Edificio e = (Edificio) itemtab;
                     int count = e.getNumSensori();
-                    int err = 0;
+                    float err = 0;
                     for (Sensor s : e.getList()){
                         int value = s.getValue(), max = s.getMaxRange(), min = s.getMinRange();
-                        if (value > max + 2 || value < min - 3) err += 1;
+                        if (value > (max + 2) || value < (min - 3)) err++;
                     }
-                    if ((err/count) >= 0.75) {e.setLevelerror(3);System.out.println("0.75");}
-                    if (((err/count) >= 0.5) && ((err/count) <= 0.75))  {e.setLevelerror(2);System.out.println("0.5 >");}
-                    if ((err/count) < 0.5) {e.setLevelerror(1); System.out.println("0.5 <");}
+                    float res = err/count;
+                    System.out.println(res);
+                    if (res >= 0.80) {e.setLevelerror(3);}
+                    if ((res >= 0.60) && (res <= 0.75)) {e.setLevelerror(2);}
+                    if (res < 0.60) {e.setLevelerror(1);}
                     Table.refresh();
                 }
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(200);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         });
         controlError.start();
+
     }
 
     @FXML

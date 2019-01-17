@@ -17,7 +17,7 @@ public class MongoDBGestoreDAOimpl implements GestoreDAO {
 
     @Override
     public boolean CorrectLoginData(String username, String password) {
-    BasicDBObject allQuery = new BasicDBObject();
+
     DBObject query = new BasicDBObject().append("Username", username);
     DBCursor cursor = gestoreCollection.find(query);
     while (cursor.hasNext()) {
@@ -25,10 +25,12 @@ public class MongoDBGestoreDAOimpl implements GestoreDAO {
         if ((user.get("Password")).equals(password)) return true;
     }
     return false;
+
     }
 
     @Override
     public Gestore getGestoreInfo(String Username){
+
         DBCursor gest = gestoreCollection.find(new BasicDBObject()
                 .append("Username", Username));
         Gestore gestore = new Gestore();
@@ -41,6 +43,7 @@ public class MongoDBGestoreDAOimpl implements GestoreDAO {
             gestore.setRuolo((String) obj.get("Ruolo"));
         }
         return gestore;
+
     }
 
     @Override
