@@ -26,7 +26,7 @@ public class TestClassSimulator implements Runnable{
     public TestClassSimulator(){
 
         try {
-            client = new MongoClient("10.178.64.247", 27017);
+            client = new MongoClient("192.168.1.6", 27017);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
@@ -151,7 +151,7 @@ public class TestClassSimulator implements Runnable{
 
     public int fakeTemperature(int min, int max){
         int temp = 0;
-        temp = r.nextInt((max + 10) - (min -6)) + min;
+        temp = r.nextInt((max + 7) - (min -5)) + min;
         return temp;
     }
 
