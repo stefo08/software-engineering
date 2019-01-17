@@ -16,10 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
@@ -167,7 +164,12 @@ public class DashBoardController implements Initializable {
                             String Datasec = String.valueOf(time.charAt(6)) + time.charAt(7);
                     if ((((parseInt(Currh) - parseInt(Datah)) > 0 ) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)||
                             (((parseInt(Currmin) - parseInt(datacur)) > 0) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)) {
-                        System.out.println("Errore");
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Information Dialog");
+                        alert.setHeaderText(null);
+                        alert.setContentText("I have a great message for you!");
+
+                        alert.showAndWait();
                     }
                 }
                 try {
