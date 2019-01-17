@@ -10,6 +10,7 @@ import Controller.GestoreController;
 import Controller.SensoreController;
 import Model.VO.Gestore;
 import Model.VO.Sensor;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -151,7 +152,9 @@ public class DashBoardController implements Initializable {
          * cliente l'effettivo malfunzionamento. Il controllo Avviene al lato Client per evitare sovraccarichi al Server.
          */
 
-        Thread ControlTime = new Thread(() -> {
+
+
+        new Thread(() -> {
 
         while(true) {
             for (Object item : Table.getItems()) {
@@ -166,12 +169,20 @@ public class DashBoardController implements Initializable {
                             String Datasec = String.valueOf(time.charAt(6)) + time.charAt(7);
                     if ((((parseInt(Currh) - parseInt(Datah)) > 0 ) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)||
                             (((parseInt(Currmin) - parseInt(datacur)) > 0) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)) {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Information Dialog");
-                        alert.setHeaderText(null);
-                        alert.setContentText("I have a great message for you!");
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                System.out.println("Errore");
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Errore: Sensore " +((Sensor) item).getNumSensore() +" " +
+                                        "offline da 1 minuto");
+                                alert.setHeaderText(null);
+                                alert.setContentText("Possibile malfunzionamento");
 
-                        alert.showAndWait();
+                                alert.showAndWait();
+                            }
+                        });
+
                     }
                 }
                 try {
@@ -183,8 +194,7 @@ public class DashBoardController implements Initializable {
             }
         }
 
-        });
-        ControlTime.start();
+        }).start();
 
     }
     @FXML
