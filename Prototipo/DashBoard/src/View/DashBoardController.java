@@ -113,7 +113,7 @@ public class DashBoardController implements Initializable {
                     setStyle("-fx-background-color: #ffffff;");
                 } else {
                     int value = item.getValue(), max = item.getMaxRange(), min = item.getMinRange();
-                    if (value > max + 3 || min < min - 3) setStyle("-fx-background-color: #9e0911;");
+                    if (value > max + 3 || value < min - 3) setStyle("-fx-background-color: #9e0911;");
                     if ((value > max  && value <= max + 3 ) || (value < min && value >= min - 3))
                         setStyle("-fx-background-color: #de8101;");
                     if (value >= min && value <= max) setStyle("-fx-background-color: #007000;");
@@ -176,13 +176,13 @@ public class DashBoardController implements Initializable {
                             @Override
                             public void run() {
                                 System.out.println("Errore");
-                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                               /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
                                 alert.setTitle("Errore: Sensore " +((Sensor) item).getNumSensore() +" " +
                                         "offline da 1 minuto");
                                 alert.setHeaderText(null);
                                 alert.setContentText("Possibile malfunzionamento");
 
-                                alert.showAndWait();
+                                alert.showAndWait();*/
                             }
                         });
 

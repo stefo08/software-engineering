@@ -11,7 +11,6 @@ import Model.VO.Sensor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,18 +20,13 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
-
-import static java.lang.Integer.parseInt;
 
 public class DashboardcittaController implements Initializable {
 
@@ -103,8 +97,8 @@ public class DashboardcittaController implements Initializable {
                     if ( item.getLevelerror() == 1 ){
                         setStyle("-fx-background-color: #007000;");
                     }
-                    else if(item.getLevelerror() == 2 ) setStyle("-fx-background-color: #c97101;");
-                    else setStyle("-fx-background-color: #840910;");
+                    if(item.getLevelerror() == 2 ) setStyle("-fx-background-color: #c97101;");
+                    if(item.getLevelerror() == 3 ) setStyle("-fx-background-color: #840910;");
                 }
             }
         });
@@ -123,8 +117,8 @@ public class DashboardcittaController implements Initializable {
                                         s2.setValue(temp.getValue());
                                         s2.setTime(temp.getTime());
                                     }
-                                    Table.refresh();
                                 }
+                                Table.refresh();
                             }
                         }
                     }
@@ -145,12 +139,13 @@ public class DashboardcittaController implements Initializable {
                     int count = e.getNumSensori();
                     int err = 0;
                     for (Sensor s : e.getList()){
-                        if (s.getValue() > s.getMaxRange() || s.getValue() < s.getMaxRange());
-                        err++;
+                        int value = s.getValue(), max = s.getMaxRange(), min = s.getMinRange();
+                        if (value > max + 2 || value < min - 3) err += 1;
                     }
-                    if ((err/count) > 0.6) {e.setLevelerror(3); Table.refresh();}
-                    else if ((err/count) > 0.3)  {e.setLevelerror(2); Table.refresh();}
-                    else {e.setLevelerror(1); Table.refresh();}
+                    if ((err/count) >= 0.75) {e.setLevelerror(3);System.out.println("0.75");}
+                    if (((err/count) >= 0.5) && ((err/count) <= 0.75))  {e.setLevelerror(2);System.out.println("0.5 >");}
+                    if ((err/count) < 0.5) {e.setLevelerror(1); System.out.println("0.5 <");}
+                    Table.refresh();
                 }
                 try {
                     Thread.sleep(100);
