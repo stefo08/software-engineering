@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DashBoardController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #56637c;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DashBoardController">
    <children>
       <DialogPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #56637c;" />
       <TableView fx:id="Table" layoutX="14.0" layoutY="14.0" prefHeight="290.0" prefWidth="574.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
@@ -19,12 +19,12 @@
             <TableColumn fx:id="DataColumn" prefWidth="121.0" text="Orario" />
         </columns>
       </TableView>
-      <Button fx:id="modifica" layoutX="229.0" layoutY="347.0" mnemonicParsing="false" onAction="#caricaModificaValori" prefHeight="26.0" prefWidth="187.0" text="Modifica parametri sensore" AnchorPane.bottomAnchor="26.0" />
-      <TextField layoutX="14.0" layoutY="347.0" prefHeight="26.0" prefWidth="44.0" AnchorPane.bottomAnchor="26.0" />
-      <TextField layoutX="82.0" layoutY="348.0" prefHeight="26.0" prefWidth="44.0" AnchorPane.bottomAnchor="26.0" />
+      <Button fx:id="modificaButton" layoutX="229.0" layoutY="347.0" mnemonicParsing="false" onAction="#modifica" prefHeight="26.0" prefWidth="187.0" text="Modifica parametri sensore" AnchorPane.bottomAnchor="26.0" />
+      <TextField fx:id="max" layoutX="14.0" layoutY="347.0" prefHeight="26.0" prefWidth="44.0" AnchorPane.bottomAnchor="26.0" />
+      <TextField fx:id="min" layoutX="82.0" layoutY="348.0" prefHeight="26.0" prefWidth="44.0" AnchorPane.bottomAnchor="26.0" />
       <Label layoutX="22.0" layoutY="323.0" text="MAX" textFill="WHITE" AnchorPane.bottomAnchor="60.0" />
       <Label layoutX="90.0" layoutY="323.0" text="MIN" textFill="WHITE" AnchorPane.bottomAnchor="60.0" />
       <Label layoutX="147.0" layoutY="323.0" text="Seleziona un sensore e inserisci i dati per modificare parametri" textFill="WHITE" AnchorPane.bottomAnchor="60.00000000000002" />
-      <Button fx:id="logoutButton" layoutX="534.0" layoutY="348.0" mnemonicParsing="false" onAction="#logout" text="Logout" AnchorPane.bottomAnchor="26.0" />
+      <Button fx:id="logoutButton" layoutX="534.0" layoutY="348.0" mnemonicParsing="false" onAction="#logout" text="Logout" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="11.6" />
    </children>
 </AnchorPane>
