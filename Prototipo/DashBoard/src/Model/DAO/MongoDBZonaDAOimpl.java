@@ -32,6 +32,7 @@ public class MongoDBZonaDAOimpl implements ZonaDAO {
                 e.setNome((String) obj2.get("NomeEdificio"));
                 e.setZona((String) obj2.get("Zona"));
                 e.setOwner((String) obj2.get("Owner"));
+                e.setLevelerror(0);
                 System.out.println(e.getNome());
             }
         lista.add(e);
