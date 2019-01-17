@@ -11,7 +11,7 @@
 <AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #56637c;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DashBoardController">
    <children>
       <DialogPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #56637c;" />
-      <TableView fx:id="Table" layoutX="14.0" layoutY="14.0" prefHeight="290.0" prefWidth="574.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <TableView fx:id="Table" layoutX="14.0" layoutY="14.0" onMouseClicked="#clickItem" prefHeight="290.0" prefWidth="574.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
         <columns>
           <TableColumn fx:id="IDColumn" prefWidth="174.0" text="ID" />
           <TableColumn fx:id="NumberColumn" prefWidth="63.0" text="Numero" />

@@ -112,7 +112,7 @@ public class DashBoardController implements Initializable {
                     setStyle("-fx-background-color: #ffffff;");
                 } else {
                     int value = item.getValue(), max = item.getMaxRange(), min = item.getMinRange();
-                    if (value > max + 3 || min < min - 3) setStyle("-fx-background-color: #9e0911;");
+                    if (value > max + 3 || value < min - 3) setStyle("-fx-background-color: #9e0911;");
                     if ((value > max  && value <= max + 3 ) || (value < min && value >= min - 3))
                         setStyle("-fx-background-color: #de8101;");
                     if (value >= min && value <= max) setStyle("-fx-background-color: #007000;");

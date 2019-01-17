@@ -139,13 +139,12 @@ public class DashboardcittaController implements Initializable {
                     int count = e.getNumSensori();
                     int err = 0;
                     for (Sensor s : e.getList()){
-                        if (s.getValue() > s.getMaxRange() || s.getValue() < s.getMaxRange()) {
-                            err += 1;
-                        }
+                        int value = s.getValue(), max = s.getMaxRange(), min = s.getMinRange();
+                        if (value > max + 2 || value < min - 3) err += 1;
                     }
-                    if ((err/count) > 0.85) {e.setLevelerror(3);System.out.println("0.85");}
-                    if ((err/count) > 0.6)  {e.setLevelerror(2);System.out.println("0.6 >");}
-                    if ((err/count) < 0.6) {e.setLevelerror(1); System.out.println("0.6 <");}
+                    if ((err/count) >= 0.75) {e.setLevelerror(3);System.out.println("0.75");}
+                    if (((err/count) >= 0.5) && ((err/count) <= 0.75))  {e.setLevelerror(2);System.out.println("0.5 >");}
+                    if ((err/count) < 0.5) {e.setLevelerror(1); System.out.println("0.5 <");}
                     Table.refresh();
                 }
                 try {

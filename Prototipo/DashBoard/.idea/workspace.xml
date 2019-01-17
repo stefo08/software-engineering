@@ -7,29 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d0cfbfd-1474-4311-a6f6-94a61ad16a59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/.idea/libraries/java_json.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/.idea/src.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/MongoDBGestoreDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/MongoDBGestoreDAOimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Sensors.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/TestClassSimulator$HighPriority.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/TestClassSimulator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/Dashboardcitta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/Dashboardcitta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/DashboardcittaController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/DashboardcittaController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/DashboardcittaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/DashboardcittaController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/loginPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Dashboardcitta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Dashboardcitta.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/DashboardcittaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DashboardcittaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/loginPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestingUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestingUnity/out/test/TestingUnity/TestClassSimulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/out/test/TestingUnity/TestClassSimulator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestingUnity/src/TestClassSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/src/TestClassSimulator.java" afterDir="false" />
@@ -73,24 +60,24 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="9" />
-          <entry key="java" value="47" />
+          <entry key="java" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="47" />
+          <entry key="JAVA" value="48" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="java" value="4399" />
+          <entry key="java" value="4468" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4399" />
+          <entry key="JAVA" value="4468" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
@@ -101,13 +88,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/DashboardcittaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1167">
-              <caret line="142" column="37" selection-start-line="142" selection-start-column="37" selection-end-line="142" selection-end-column="37" />
+            <state relative-caret-position="61">
+              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3086#3728#0" expanded="true" />
                 <element signature="e#3727#3728#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/GestoreController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -124,11 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="150">
+              <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,13 +141,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/DashBoardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="181" column="54" selection-start-line="181" selection-start-column="54" selection-end-line="181" selection-end-column="54" />
+            <state relative-caret-position="83">
+              <caret line="107" column="21" lean-forward="true" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4794#4795#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,8 +198,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Butto</find>
       <find>xmlns</find>
+      <find>Butto</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/out/artifacts</dir>
@@ -228,13 +225,13 @@
         <option value="$PROJECT_DIR$/src/Controller/ZonaController.java" />
         <option value="$PROJECT_DIR$/src/Model/VO/Edificio.java" />
         <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBZonaDAOimpl.java" />
-        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java" />
         <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBGestoreDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/View/Dashboard.fxml" />
         <option value="$PROJECT_DIR$/src/View/Dashboardcitta.fxml" />
         <option value="$PROJECT_DIR$/src/View/loginPage.fxml" />
         <option value="$PROJECT_DIR$/src/View/DashboardcittaController.java" />
         <option value="$PROJECT_DIR$/src/View/DashBoardController.java" />
+        <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java" />
       </list>
     </option>
   </component>
@@ -276,6 +273,32 @@
               <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
               <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="VO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -288,7 +311,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547744509371" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547747215585" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -333,18 +356,18 @@
       <updated>1547641175450</updated>
       <workItem from="1547641185060" duration="13413000" />
       <workItem from="1547658423434" duration="965000" />
-      <workItem from="1547735971092" duration="7422000" />
+      <workItem from="1547735971092" duration="9881000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21800000" />
+    <option name="totallyTimeSpent" value="24259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09289176" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09289176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -353,7 +376,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970452" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28460342" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28460342" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -392,23 +415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/GestoreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-          <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#997#998#0" expanded="true" />
-            <element signature="e#1032#1033#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -511,16 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Dashboard.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -545,6 +541,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/GestoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -557,8 +560,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/DashboardcittaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1167">
-          <caret line="142" column="37" selection-start-line="142" selection-start-column="37" selection-end-line="142" selection-end-column="37" />
+        <state relative-caret-position="61">
+          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3086#3728#0" expanded="true" />
@@ -569,8 +572,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/DashBoardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="181" column="54" selection-start-line="181" selection-start-column="54" selection-end-line="181" selection-end-column="54" />
+        <state relative-caret-position="83">
+          <caret line="107" column="21" lean-forward="true" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4794#4795#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
