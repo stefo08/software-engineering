@@ -47,7 +47,7 @@ public class MongoDBGestoreDAOimpl implements GestoreDAO {
     public String getGestoreEdificio(String user){
 
         edificioCollection = factory.createConnection().getCollection(COLLECTION);
-        DBObject edif = edificioCollection.findOne(new BasicDBObject().append("Username", "Angeloo"));
+        DBObject edif = edificioCollection.findOne(new BasicDBObject().append("Username", user));
         return (String) edif.get("Edificio");
 
     }

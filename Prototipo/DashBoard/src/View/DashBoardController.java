@@ -173,13 +173,13 @@ public class DashBoardController implements Initializable {
                             @Override
                             public void run() {
                                 System.out.println("Errore");
-                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                               /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
                                 alert.setTitle("Errore: Sensore " +((Sensor) item).getNumSensore() +" " +
                                         "offline da 1 minuto");
                                 alert.setHeaderText(null);
                                 alert.setContentText("Possibile malfunzionamento");
 
-                                alert.showAndWait();
+                                alert.showAndWait();*/
                             }
                         });
 
