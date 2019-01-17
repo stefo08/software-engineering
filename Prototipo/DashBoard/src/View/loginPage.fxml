@@ -9,17 +9,17 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #56637c;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.loginPageController">
    <children>
-      <TextField fx:id="username" layoutX="207.0" layoutY="156.0" prefHeight="26.0" prefWidth="186.0" />
-      <Label fx:id="getin" layoutX="166.0" layoutY="311.0" textFill="WHITE" />
-      <PasswordField fx:id="password" layoutX="207.0" layoutY="220.0" prefHeight="26.0" prefWidth="186.0" />
-      <Label layoutX="94.0" layoutY="47.0" text="Dashboard di monitraggio amibientale" textFill="WHITE">
+      <TextField fx:id="username" layoutX="205.0" layoutY="133.0" prefHeight="26.0" prefWidth="186.0" />
+      <Label fx:id="getin" layoutX="142.0" layoutY="299.0" prefHeight="18.0" prefWidth="358.0" textFill="WHITE" />
+      <PasswordField fx:id="password" layoutX="205.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="186.0" />
+      <Label layoutX="206.0" layoutY="171.0" prefHeight="18.0" prefWidth="66.0" text="Password" textFill="WHITE" />
+      <Label layoutX="82.0" layoutY="48.0" prefHeight="35.0" prefWidth="431.0" text="Dashboard di monitoraggio ambientale" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="207.0" layoutY="129.0" text="Username" textFill="WHITE" />
-      <Label layoutX="207.0" layoutY="191.0" text="Password" textFill="WHITE" />
-      <Button layoutX="278.0" layoutY="277.0" mnemonicParsing="false" onAction="#login" style="-fx-background-color: #33c452;" text="Login" textFill="WHITE" />
-      <Label layoutX="14.0" layoutY="369.0" text="ABAC group" textFill="WHITE" />
+      <Label layoutX="206.0" layoutY="106.0" prefHeight="18.0" prefWidth="86.0" text="Username" textFill="WHITE" />
+      <Button layoutX="276.0" layoutY="259.0" mnemonicParsing="false" onAction="#login" style="-fx-background-color: #33c452;" text="Login" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="368.0" text="ABAC group" textFill="WHITE" AnchorPane.bottomAnchor="14.399999999999999" AnchorPane.leftAnchor="14.0" />
    </children>
 </AnchorPane>
