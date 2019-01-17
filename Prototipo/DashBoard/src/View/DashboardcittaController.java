@@ -39,6 +39,8 @@ public class DashboardcittaController implements Initializable {
     @FXML
     private Button logoutButton;
     @FXML
+    private AnchorPane rootPane;
+    @FXML
     private TableView Table;
     @FXML
     private TableColumn NameColumn, ZoneColumn, numColumn, GestoreColumn;
@@ -133,14 +135,9 @@ public class DashboardcittaController implements Initializable {
     }
 
     @FXML
-    private void logout(){
-        try {
-            Stage stage = (Stage) logoutButton.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("loginPage.fxml"));
-            stage.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    private void logout(ActionEvent Event) throws IOException {
+        AnchorPane pane = FXMLLoader.load( getClass().getResource("loginPage.fxml"));
+        rootPane.getChildren().setAll(pane);
     }
+
 }

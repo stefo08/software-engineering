@@ -16,10 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
@@ -38,7 +35,9 @@ public class DashBoardController implements Initializable {
     @FXML
     private AnchorPane rootPane;
     @FXML
-    private Button modifica;
+    private Button logoutButton, modificaButton;
+    @FXML
+    private TextField max, min;
     @FXML
     private TableView Table;
     @FXML
@@ -183,11 +182,15 @@ public class DashBoardController implements Initializable {
         ControlTime.start();
 
     }
-
-    // al click del bottone carica la view della modifica dei valori
     @FXML
-    private void caricaModificaValori(ActionEvent Event) throws IOException {
-        AnchorPane pane = FXMLLoader.load( getClass().getResource("ModificaValori.fxml"));
+    private void modifica(ActionEvent Event) throws IOException {
+        
+    }
+
+    @FXML
+    private void logout(ActionEvent Event) throws IOException {
+        AnchorPane pane = FXMLLoader.load( getClass().getResource("loginPage.fxml"));
         rootPane.getChildren().setAll(pane);
     }
+
 }
