@@ -205,6 +205,8 @@ public class DashBoardController implements Initializable {
 
     }
 
+    /*  cliccando su una riga della tabella si assegna ad un oggetto sensore di tipo Sensor il sensore
+        presente sulla riga clickata. */
     @FXML
     public void clickItem(MouseEvent event)
     {
@@ -214,23 +216,27 @@ public class DashBoardController implements Initializable {
             System.out.println(sensore.getID());
         }
     }
-
+    
+    /*  bottone modifica, dopo aver scritto i nuovi parametri max e/o min premendo sul bottone,
+        vengono aggiornati i dati del model e del database del sensore selezionato in precedenza.
+        se non é stato selezionato nessun sensore o non si é inserito nessun dato non succede nulla. */
     @FXML
     private void modifica(ActionEvent Event) throws IOException {
         if(sensore!=null) {
-            if (parseInt(min.getText()) < parseInt(max.getText()) || min == null || max == null) {
-                if (min.getText() != null) {
+            if (parseInt(min.getText()) < parseInt(max.getText()) || min.getText().isEmpty() || max.getText().isEmpty()) {
+                if (!min.getText().isEmpty()) {
                     sensore.setMinRange(parseInt(min.getText()));
                     controllerSensore.updateRangeSensoreMin(sensore.getID(), parseInt(min.getText()), sensore.getNumSensore(), sensore.getMaxRange(), sensore.getEdificio());
                 }
-                if (max.getText() != null) {
+                if (!max.getText().isEmpty()) {
                     sensore.setMaxRange(parseInt(max.getText()));
                     controllerSensore.updateRangeSensoreMax(sensore.getID(), parseInt(max.getText()), sensore.getNumSensore(), sensore.getMinRange(), sensore.getEdificio());
                 }
             }
         }
     }
-
+    
+    // bottone logout, riporta alla loginPage
     @FXML
     private void logout(ActionEvent Event) throws IOException {
         AnchorPane pane = FXMLLoader.load( getClass().getResource("loginPage.fxml"));
