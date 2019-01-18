@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="javafx" name="DashBoard">
-    <output-path>$PROJECT_DIR$/out/artifacts/DashBoard</output-path>
+  <artifact type="javafx" name="DashBoard2">
+    <output-path>$USER_HOME$/Desktop</output-path>
     <properties id="javafx-properties">
       <options>
         <option name="appClass" value="View.Main" />

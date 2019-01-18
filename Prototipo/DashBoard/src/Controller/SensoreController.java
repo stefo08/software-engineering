@@ -37,17 +37,18 @@ public class SensoreController {
             s.setMaxRange((int) temp.get("MaxRange"));
             s.setMinRange((int) temp.get("MinRange"));
             s.setID(temp.get("_id").toString());
+            s.setEdificio((String) temp.get("Edificio"));
             sensori.add(s);
         }
 
         return sensori;
     }
 
-    public void updateRangeSensoreMax(String id, int max){
-        sensoreDAO.updateRangeSensoreMax(id, max);
+    public void updateRangeSensoreMax(String id, int max, int numb, int min, String ed){
+        sensoreDAO.updateRangeSensoreMax(id, max, numb, min, ed);
     }
 
-    public void updateRangeSensoreMin(String id, int min){
-        sensoreDAO.updateRangeSensoreMax(id, min);
+    public void updateRangeSensoreMin(String id, int min, int numb, int max, String ed){
+        sensoreDAO.updateRangeSensoreMax(id, min, numb, max, ed);
     }
 }

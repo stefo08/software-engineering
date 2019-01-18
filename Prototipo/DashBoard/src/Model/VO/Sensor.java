@@ -11,19 +11,20 @@ public class Sensor implements Comparable<Sensor> {
     private int numSensore;
     private int value;
     private String Time;
-    private String tmcont;
+    private String Edificio;
 
     public Sensor(){
 
     }
 
-    public Sensor(String id, int pror, int min, int max, int value, String tm){
+    public Sensor(String id, int pror, int min, int max, int value, String tm, String ed){
         this.ID = id;
         this.priotità = pror;
         this.minRange = min;
         this.maxRange = max;
         this.value = value;
         this.Time = tm;
+        this.Edificio = ed;
     }
 
     public String getID(){
@@ -82,15 +83,13 @@ public class Sensor implements Comparable<Sensor> {
         Time = time;
     }
 
-    public String getTmcont() {
-        return tmcont;
+    public String getEdificio() {
+        return Edificio;
     }
 
-    public void setTmcont(String tmcont) {
-        this.tmcont = tmcont;
+    public void setEdificio(String edificio) {
+        Edificio = edificio;
     }
-
-
 
     @Override
     public int compareTo(Sensor other){

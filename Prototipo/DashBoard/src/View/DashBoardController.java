@@ -221,11 +221,11 @@ public class DashBoardController implements Initializable {
             if (parseInt(min.getText()) < parseInt(max.getText()) || min == null || max == null) {
                 if (min.getText() != null) {
                     sensore.setMinRange(parseInt(min.getText()));
-                    controllerSensore.updateRangeSensoreMin(sensore.getID(), parseInt(min.getText()));
+                    controllerSensore.updateRangeSensoreMin(sensore.getID(), parseInt(min.getText()), sensore.getNumSensore(), sensore.getMaxRange(), sensore.getEdificio());
                 }
                 if (max.getText() != null) {
                     sensore.setMaxRange(parseInt(max.getText()));
-                    controllerSensore.updateRangeSensoreMax(sensore.getID(), parseInt(max.getText()));
+                    controllerSensore.updateRangeSensoreMax(sensore.getID(), parseInt(max.getText()), sensore.getNumSensore(), sensore.getMinRange(), sensore.getEdificio());
                 }
             }
         }
