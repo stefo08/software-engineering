@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cec6b63-b78b-4176-8f6b-a025952fb6c8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../DashBoard/.idea/artifacts/DashBoard.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../DashBoard/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Controller/SensoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Controller/SensoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Model/DAO/MongoDBDataDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Model/DAO/MongoDBDataDAOimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Model/DAO/MongoDBSensorDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Model/DAO/MongoDBSensorDAOimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Model/DAO/SensorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/Model/DAO/SensorDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/DashBoardController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/DashBoardController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/DashBoardController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/DashBoardController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/DashBoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/DashBoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/out/production/DashBoard/View/ModificaValori.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/src/Controller/SensoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/Controller/SensoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/MongoDBSensorDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/MongoDBSensorDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/SensorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/Model/DAO/SensorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/src/Model/VO/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/Model/VO/Sensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DashBoard/src/View/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DashBoard/src/View/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestClassSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestClassSimulator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,7 +95,7 @@
     <session id="-2084994774">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="2" />
@@ -224,7 +207,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="733" />
@@ -413,7 +396,7 @@
     <option name="totallyTimeSpent" value="118769000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="733" extended-state="1" />
+    <frame x="0" y="23" width="1280" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976744" visible="true" weight="0.1292407" />

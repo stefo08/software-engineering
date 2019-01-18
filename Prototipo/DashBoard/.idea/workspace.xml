@@ -2,30 +2,11 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="DashBoard2" />
+      <artifact name="DashBoard:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d0cfbfd-1474-4311-a6f6-94a61ad16a59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/DashBoard.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Controller/SensoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/Controller/SensoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/MongoDBDataDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/MongoDBDataDAOimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/MongoDBSensorDAOimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/MongoDBSensorDAOimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/SensorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/Model/DAO/SensorDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/DashBoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/Dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/ModificaValori.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SensoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SensoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DAO/SensorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/SensorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/VO/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/VO/Sensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestingUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestingUnity/src/TestClassSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/src/TestClassSimulator.java" afterDir="false" />
-    </list>
+    <list default="true" id="8d0cfbfd-1474-4311-a6f6-94a61ad16a59" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +36,7 @@
     <session id="-402126882">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.19" value="2" />
@@ -135,8 +116,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            <state relative-caret-position="345">
+              <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -248,7 +229,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="735" />
@@ -318,7 +299,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547816113353" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547816125744" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -365,12 +346,12 @@
       <workItem from="1547658423434" duration="965000" />
       <workItem from="1547735971092" duration="12548000" />
       <workItem from="1547752067883" duration="714000" />
-      <workItem from="1547815296255" duration="736000" />
+      <workItem from="1547815296255" duration="937000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28376000" />
+    <option name="totallyTimeSpent" value="28577000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -596,8 +577,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBSensorDAOimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        <state relative-caret-position="345">
+          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -607,7 +588,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>DashBoard2</last-edited>
+          <last-edited>DashBoard:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
