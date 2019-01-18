@@ -223,12 +223,12 @@ public class DashBoardController implements Initializable {
     @FXML
     private void modifica(ActionEvent Event) throws IOException {
         if(sensore!=null) {
-            if (parseInt(min.getText()) < parseInt(max.getText()) || min == null || max == null) {
-                if (min.getText() != null) {
+            if (parseInt(min.getText()) < parseInt(max.getText()) || min.getText().isEmpty() || max.getText().isEmpty()) {
+                if (!min.getText().isEmpty()) {
                     sensore.setMinRange(parseInt(min.getText()));
                     controllerSensore.updateRangeSensoreMin(sensore.getID(), parseInt(min.getText()), sensore.getNumSensore(), sensore.getMaxRange(), sensore.getEdificio());
                 }
-                if (max.getText() != null) {
+                if (!max.getText().isEmpty()) {
                     sensore.setMaxRange(parseInt(max.getText()));
                     controllerSensore.updateRangeSensoreMax(sensore.getID(), parseInt(max.getText()), sensore.getNumSensore(), sensore.getMinRange(), sensore.getEdificio());
                 }
