@@ -205,6 +205,8 @@ public class DashBoardController implements Initializable {
 
     }
 
+    /*  cliccando su una riga della tabella si assegna ad un oggetto sensore di tipo Sensor il sensore
+        presente sulla riga clickata. */
     @FXML
     public void clickItem(MouseEvent event)
     {
@@ -214,7 +216,10 @@ public class DashBoardController implements Initializable {
             System.out.println(sensore.getID());
         }
     }
-
+    
+    /*  bottone modifica, dopo aver scritto i nuovi parametri max e/o min premendo sul bottone,
+        vengono aggiornati i dati del model e del database del sensore selezionato in precedenza.
+        se non é stato selezionato nessun sensore o non si é inserito nessun dato non succede nulla. */
     @FXML
     private void modifica(ActionEvent Event) throws IOException {
         if(sensore!=null) {
@@ -230,7 +235,8 @@ public class DashBoardController implements Initializable {
             }
         }
     }
-
+    
+    // bottone logout, riporta alla loginPage
     @FXML
     private void logout(ActionEvent Event) throws IOException {
         AnchorPane pane = FXMLLoader.load( getClass().getResource("loginPage.fxml"));
