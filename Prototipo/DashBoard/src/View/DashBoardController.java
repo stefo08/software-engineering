@@ -61,7 +61,7 @@ public class DashBoardController implements Initializable {
     private DateFormat format;
     Sensor sensore;
 
-    /**
+    /*
      * Il metodo initialize inizializza i Controller (Gestore, Sensore e Edificio)
      * Inizializza la lista che servirà a riempire la Table View
      */
@@ -74,13 +74,13 @@ public class DashBoardController implements Initializable {
         controllerEdificio = new EdificioController();
         controllerData = new DataController();
         listasensori = new ArrayList<Sensor>();
-        format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ITALY);
         sensore = new Sensor();
         Run();
 
     }
 
-    /**
+    /*
      * Il metodo Run, passa al Controller Gestore l'User di chi ha effettuato l'accesso al sistema. I Controller recuperano, l'User, l'Edificio
      * in suo possesso e i relativi sensori con i valori [min e max]. Viene inizializzata la Table View che servirà a mostrare i dati live al cliente
      */
@@ -106,7 +106,7 @@ public class DashBoardController implements Initializable {
 
         Table.setItems(values);
 
-        /**
+        /*
          * Il Metodo setRowFactory è un metodo di libreria di FX ed è necessario per modificare le proprietà gradice della TableView sotto determinate
          * condizioni. Il metodo, ogni volta che un nuovo sensore viene aggiornato nella lista, intercetta la modifica (item) e verifica le condizioni
          * in modo da mostrare i "colori" in base al dato che viene inviato dal sensore. (Rosso: Sensore fuori range di molto, Arancione: Fuori range limite,
@@ -129,7 +129,7 @@ public class DashBoardController implements Initializable {
             }
         });
 
-        /**
+        /*
          * Il thread è necessario per permettere la renderizzazione dei valori nella TableView in quanto l'aggiornamento sarebbe troppo veloce e non
          * darebbe tempo a FX di listare i valori. Il thread attraverso un While(true) è in continua richiesta di nuovi valori dal server, Viene
          * effettuato un controllo per ogni sensore presente, se il dato che arriva aggiorna un sensore, solleva il metodo sopra setRowFactory.
@@ -167,7 +167,7 @@ public class DashBoardController implements Initializable {
         });
         f.start();
 
-        /**
+        /*
          * Il Thread si occupa della verifica della correttezza di funzionamento dei Sensori. Se passato un minuto da l'ultimo invio il Sensore non
          * risponde, automaticamente viene mostrato un Warning, il valore nella Dashboard è posto a 0. Viene mostrato anche un Alert, che mostra al
          * cliente l'effettivo malfunzionamento. Il controllo Avviene al lato Client per evitare sovraccarichi al Server.
@@ -248,6 +248,7 @@ public class DashBoardController implements Initializable {
 
     /*  cliccando su una riga della tabella si assegna ad un oggetto sensore di tipo Sensor il sensore
         presente sulla riga clickata. */
+
     @FXML
     public void clickItem(MouseEvent event)
     {
@@ -261,6 +262,7 @@ public class DashBoardController implements Initializable {
     /*  bottone modifica, dopo aver scritto i nuovi parametri max e/o min premendo sul bottone,
         vengono aggiornati i dati del model e del database del sensore selezionato in precedenza.
         se non é stato selezionato nessun sensore o non si é inserito nessun dato non succede nulla. */
+
     @FXML
     private void modifica(ActionEvent Event) throws IOException {
         if(sensore!=null) {
@@ -278,6 +280,7 @@ public class DashBoardController implements Initializable {
     }
     
     // bottone logout, riporta alla loginPage
+
     @FXML
     private void logout(ActionEvent Event) throws IOException {
         AnchorPane pane = FXMLLoader.load( getClass().getResource("loginPage.fxml"));
