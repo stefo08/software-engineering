@@ -23,16 +23,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 import static java.lang.Integer.parseInt;
 
@@ -137,9 +141,20 @@ public class DashBoardController implements Initializable {
                     Sensor temp = controllerData.getLastData(s.getID());
                     for (Object items : Table.getItems()) {
                         Sensor temptable = (Sensor) items;
-                        if (temptable.getNumSensore() == temp.getNumSensore()){
-                            temptable.setValue(temp.getValue());
-                            temptable.setTime(temp.getTime());
+                        if ((temptable.getNumSensore() == temp.getNumSensore())){
+                            Date curr = null;
+                            Date old = null;
+                            try {
+                                if (temptable.getTime() != null) curr = format.parse(temptable.getTime());
+                                else temptable.setTime(temp.getTime()); curr = format.parse(temptable.getTime());
+                                old = format.parse(temp.getTime());
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+                            }
+                            if (old.after(curr)) {
+                                temptable.setTime(temp.getTime());
+                                temptable.setValue(temp.getValue());
+                            }
                         }
                         Table.refresh();
                     }
@@ -174,23 +189,42 @@ public class DashBoardController implements Initializable {
                 if(time2 != null) {
                     String Datah = String.valueOf(time2.charAt(0)) + time2.charAt(1); String datacur = String.valueOf(time2.charAt(3)) + time2.charAt(4);
                             String Datasec = String.valueOf(time.charAt(6)) + time.charAt(7);
+                            //Aggiungerer che il valore deve essere diverso da 0
                     if ((((parseInt(Currh) - parseInt(Datah)) > 0 ) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)||
                             (((parseInt(Currmin) - parseInt(datacur)) > 0) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)) {
+                        tempor.setValue(0);
+                        tempor.setTime(time);
                         Platform.runLater(new Runnable() {
+
                             @Override
                             public void run() {
-                                //System.out.println("Errore");
-                               /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                alert.setTitle("Errore: Sensore " +((Sensor) item).getNumSensore() +" " +
-                                        "offline da 1 minuto");
-                                alert.setHeaderText(null);
-                                alert.setContentText("Possibile malfunzionamento");
+                                Alert alert = new Alert(Alert.AlertType.NONE);
+                                alert.setTitle("Possibile malfunzionamento Sensore");;
+                                alert.setContentText("Il sensore " +tempor.getNumSensore() +" sembra" +
+                                        " non funzionare correttamente");
+                                ButtonType buttonTypeCancel = new ButtonType("OK", ButtonBar.ButtonData.CANCEL_CLOSE);
+                                alert.getButtonTypes().setAll(buttonTypeCancel);
+                                ((Stage)alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("View/icon.png"));
 
-                                alert.showAndWait();*/
+                                    Thread thread = new Thread(() -> {
+                                        try {
+                                            Thread.sleep(600);
+                                            if (alert.isShowing()) {
+                                                Platform.runLater(() -> alert.close());
+                                            }
+                                        } catch (Exception exp) {
+                                            exp.printStackTrace();
+                                        }
+                                    });
+
+                                    thread.setDaemon(true);
+                                    thread.start();
+                                    alert.showAndWait();
                             }
                         });
 
                     }
+                    Table.refresh();
                 }
                 try {
                     Thread.sleep(100);

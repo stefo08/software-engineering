@@ -8,7 +8,7 @@ import java.net.UnknownHostException;
 
 public class MongoDBDAOFactory extends DAOFactory {
 
-    public static String DRIVER = "192.168.1.6";
+    public static String DRIVER = "localhost";
     public static int PORT = 27017;
     public static String DATABASE = "progetto";
 
