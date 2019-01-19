@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -39,6 +40,8 @@ public class loginPageController {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
                     Parent root = (Parent) fxmlLoader.load();
                     Stage stage1 = new Stage();
+                    stage1.setTitle("Dashboard Edificio - Visualizza Dati");
+                    stage1.getIcons().add(new Image("View/icon.png"));
                     stage1.setScene(new Scene(root));
                     stage1.show();
                 }

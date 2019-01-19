@@ -74,7 +74,7 @@ public class DashBoardController implements Initializable {
         controllerEdificio = new EdificioController();
         controllerData = new DataController();
         listasensori = new ArrayList<Sensor>();
-        format = new SimpleDateFormat("HH:mm:ss");
+        format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         sensore = new Sensor();
         Run();
 
@@ -142,16 +142,15 @@ public class DashBoardController implements Initializable {
                     for (Object items : Table.getItems()) {
                         Sensor temptable = (Sensor) items;
                         if ((temptable.getNumSensore() == temp.getNumSensore())){
-                            Date curr = null;
                             Date old = null;
+                            Date curr = null;
                             try {
-                                if (temptable.getTime() != null) curr = format.parse(temptable.getTime());
-                                else temptable.setTime(temp.getTime()); curr = format.parse(temptable.getTime());
+                                curr = format.parse(temptable.getTime());
                                 old = format.parse(temp.getTime());
                             } catch (ParseException e) {
                                 e.printStackTrace();
                             }
-                            if (old.after(curr)) {
+                            if (old.after(curr)){
                                 temptable.setTime(temp.getTime());
                                 temptable.setValue(temp.getValue());
                             }
@@ -181,45 +180,53 @@ public class DashBoardController implements Initializable {
         while(true) {
             for (Object item : Table.getItems()) {
                 Sensor tempor = (Sensor) item;
-                Date data = new Date();
-                String time = format.format(data);
-                String Currmin = String.valueOf(time.charAt(3)) + time.charAt(4); String Currh = String.valueOf(time.charAt(0)) + time.charAt(1);
-                    String Currsec = String.valueOf(time.charAt(6)) + time.charAt(7);
-                String time2 = tempor.getTime();
-                if(time2 != null) {
-                    String Datah = String.valueOf(time2.charAt(0)) + time2.charAt(1); String datacur = String.valueOf(time2.charAt(3)) + time2.charAt(4);
-                            String Datasec = String.valueOf(time.charAt(6)) + time.charAt(7);
-                            //Aggiungerer che il valore deve essere diverso da 0
-                    if ((((parseInt(Currh) - parseInt(Datah)) > 0 ) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)||
-                            (((parseInt(Currmin) - parseInt(datacur)) > 0) && (parseInt(Currsec) - parseInt(Datasec)) >= 0)) {
+                Date oldval = null;
+                    try {
+
+                        if (tempor.getTime() != null)
+                        oldval = format.parse(tempor.getTime());
+                        else {
+                            oldval = new Date();
+                            tempor.setTime(format.format(oldval));
+                        }
+
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    Date data = new Date();
+                    long diff = data.getTime() - oldval.getTime();
+                    long min = (diff/60000);
+                    System.out.println(min);
+                    if (min >= 1) {
                         tempor.setValue(0);
+                        String time = format.format(new Date());
                         tempor.setTime(time);
                         Platform.runLater(new Runnable() {
 
                             @Override
                             public void run() {
                                 Alert alert = new Alert(Alert.AlertType.NONE);
-                                alert.setTitle("Possibile malfunzionamento Sensore");;
-                                alert.setContentText("Il sensore " +tempor.getNumSensore() +" sembra" +
+                                alert.setTitle("Possibile malfunzionamento Sensore");
+                                alert.setContentText("Il sensore " + tempor.getNumSensore() + " sembra" +
                                         " non funzionare correttamente");
                                 ButtonType buttonTypeCancel = new ButtonType("OK", ButtonBar.ButtonData.CANCEL_CLOSE);
                                 alert.getButtonTypes().setAll(buttonTypeCancel);
-                                ((Stage)alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("View/icon.png"));
+                                ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("View/icon.png"));
 
-                                    Thread thread = new Thread(() -> {
-                                        try {
-                                            Thread.sleep(600);
-                                            if (alert.isShowing()) {
-                                                Platform.runLater(() -> alert.close());
-                                            }
-                                        } catch (Exception exp) {
-                                            exp.printStackTrace();
+                                Thread thread = new Thread(() -> {
+                                    try {
+                                        Thread.sleep(600);
+                                        if (alert.isShowing()) {
+                                            Platform.runLater(() -> alert.close());
                                         }
-                                    });
+                                    } catch (Exception exp) {
+                                        exp.printStackTrace();
+                                    }
+                                });
 
-                                    thread.setDaemon(true);
-                                    thread.start();
-                                    alert.showAndWait();
+                                thread.setDaemon(true);
+                                thread.start();
+                                alert.showAndWait();
                             }
                         });
 
@@ -233,7 +240,7 @@ public class DashBoardController implements Initializable {
                 }
 
             }
-        }
+
 
         }).start();
 
