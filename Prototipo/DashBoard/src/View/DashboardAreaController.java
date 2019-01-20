@@ -40,7 +40,7 @@ import java.util.*;
 
 import static java.lang.Integer.parseInt;
 
-public class DashBoardController implements Initializable {
+public class DashboardAreaController implements Initializable {
 
     @FXML
     private AnchorPane rootPane;

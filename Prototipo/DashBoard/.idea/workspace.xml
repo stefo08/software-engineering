@@ -8,12 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8d0cfbfd-1474-4311-a6f6-94a61ad16a59" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/DashboardcittaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DashBoard/View/DashboardcittaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DAO/DataDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/DataDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/DashboardcittaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DashboardcittaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DashBoard/View/o.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/DashboardAreaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DashboardAreaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestingUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestingUnity/out/test/TestingUnity/TestClassSimulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/out/test/TestingUnity/TestClassSimulator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TestingUnity/src/TestClassSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TestingUnity/src/TestClassSimulator.java" afterDir="false" />
@@ -47,8 +43,8 @@
     <session id="-402126882">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.12" value="2" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="1" />
@@ -56,32 +52,35 @@
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="JAVA/" value="1" />
+          <entry key="MODULES/mdl-DashBoard" value="1" />
           <entry key="fxml" value="13" />
-          <entry key="java" value="72" />
+          <entry key="java" value="73" />
           <entry key="png" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="72" />
+          <entry key="JAVA" value="73" />
+          <entry key="UML" value="2" />
           <entry key="XML" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="java" value="8421" />
+          <entry key="java" value="8427" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8421" />
+          <entry key="JAVA" value="8427" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
@@ -89,20 +88,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/DashBoardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="185" column="50" selection-start-line="185" selection-start-column="50" selection-end-line="185" selection-end-column="50" />
+            <state relative-caret-position="15">
+              <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/DashboardcittaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="182" column="17" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
+            <state relative-caret-position="735">
+              <caret line="70" column="76" selection-start-line="70" selection-start-column="76" selection-end-line="70" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -138,7 +137,7 @@
         <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -147,15 +146,9 @@
         <entry file="file://$PROJECT_DIR$/src/View/loginPageController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/o.fxml">
-          <provider selected="true" editor-type-id="text-editor" />
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -219,6 +212,7 @@
         <option value="$PROJECT_DIR$/src/Model/DAO/DataDAO.java" />
         <option value="$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java" />
         <option value="$PROJECT_DIR$/src/View/DashboardcittaController.java" />
+        <option value="$PROJECT_DIR$/src/View/DashboardAreaController.java" />
       </list>
     </option>
   </component>
@@ -228,18 +222,16 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="735" />
+    <option name="height" value="733" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,48 +255,18 @@
               <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="VO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DashBoard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548005539723" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548018302242" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -358,12 +320,13 @@
       <workItem from="1547889163917" duration="8298000" />
       <workItem from="1547906029347" duration="7519000" />
       <workItem from="1547947422136" duration="326000" />
-      <workItem from="1547993856459" duration="10135000" />
+      <workItem from="1547993856459" duration="12115000" />
+      <workItem from="1548016974159" duration="445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56563000" />
+    <option name="totallyTimeSpent" value="58988000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -375,10 +338,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="735" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="733" extended-state="1" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10339257" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3352181" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -387,14 +349,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3281493" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16796267" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.02021773" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32866043" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32866043" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.19314642" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19188768" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.13841368" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -563,46 +525,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-          <folding>
-            <element signature="e#936#937#0" expanded="true" />
-            <element signature="e#964#965#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/o.fxml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/loginPage.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="127" selection-start-line="9" selection-start-column="127" selection-end-line="9" selection-end-column="127" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/o.fxml" />
     <entry file="file://$PROJECT_DIR$/src/View/icon.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/loginPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/SensoreController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -613,17 +546,351 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java">
+    <entry file="file://$PROJECT_DIR$/src/View/DashboardAreaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="27" />
+        <state relative-caret-position="-1617">
+          <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/DAO/DataDAO.java">
+    <entry file="uml://MODULES/mdl-DashBoard">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-DashBoard</OriginalElement>
+          <nodes>
+            <node x="" y="">mdl-DashBoard</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.5721469478977511" x="69.0" y="81.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="2086.2302380952383" y="841.0">View.DashboardcittaController</node>
+            <node x="2179.7083333333335" y="499.0">Controller.EdificioController</node>
+            <node x="101.1992857142859" y="111.0">Model.DAO.ZonaDAO</node>
+            <node x="2831.6559523809524" y="454.5">Controller.GestoreController</node>
+            <node x="0.0" y="1003.0">View.Main</node>
+            <node x="817.75" y="455.0">Model.DAO.MongoDBDAOFactory</node>
+            <node x="1110.3802380952384" y="863.0">Model.DAO.MongoDBDataDAOimpl</node>
+            <node x="2430.2302380952383" y="819.0">View.DashboardAreaController</node>
+            <node x="2891.120238095238" y="22.5">Model.VO.Gestore</node>
+            <node x="3500.495238095238" y="0.0">Model.VO.Sensor</node>
+            <node x="1361.3702380952382" y="841.0">Model.DAO.MongoDBGestoreDAOimpl</node>
+            <node x="3740.7809523809524" y="874.0">Model.VO.Zona</node>
+            <node x="720.75" y="863.0">Model.DAO.MongoDBEdificioDAOimpl</node>
+            <node x="1575.6933333333336" y="55.5">Model.DAO.DAOFactory</node>
+            <node x="1219.5326190476194" y="499.0">Controller.ZonaController</node>
+            <node x="2487.7083333333335" y="499.0">Controller.DataController</node>
+            <node x="279.0" y="841.0">Model.DAO.MongoDBSensorDAOimpl</node>
+            <node x="2255.1052380952383" y="89.0">Model.DAO.GestoreDAO</node>
+            <node x="818.1992857142859" y="111.0">Model.DAO.EdificioDAO</node>
+            <node x="1741.7083333333335" y="477.0">Controller.SensoreController</node>
+            <node x="3326.521904761905" y="433.0">Model.VO.Edificio</node>
+            <node x="2908.0683333333336" y="819.0">View.DashBoardController</node>
+            <node x="2025.1052380952383" y="111.0">Model.DAO.DataDAO</node>
+            <node x="535.3708281099737" y="537.5095266505496">Model.DAO.SensorDAO</node>
+            <node x="0.0" y="863.0">Model.DAO.MongoDBZonaDAOimpl</node>
+            <node x="3218.0683333333336" y="863.0">View.loginPageController</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="Model.DAO.MongoDBDAOFactory" target="Model.DAO.DAOFactory">
+              <point x="0.0" y="-81.0" />
+              <point x="922.25" y="383.0" />
+              <point x="1597.8600000000004" y="383.0" />
+              <point x="-110.83333333333326" y="81.0" />
+            </edge>
+            <edge source="View.DashBoardController" target="Model.VO.Sensor">
+              <point x="120.83333333333337" y="-69.5" />
+              <point x="3173.901666666667" y="799.0" />
+              <point x="3761.495238095238" y="799.0" />
+              <point x="87.0" y="136.5" />
+            </edge>
+            <edge source="Controller.EdificioController" target="Model.DAO.EdificioDAO">
+              <point x="-72.0" y="-37.0" />
+              <point x="2251.7083333333335" y="343.0" />
+              <point x="1034.199285714286" y="343.0" />
+              <point x="72.0" y="25.5" />
+            </edge>
+            <edge source="View.DashboardAreaController" target="Controller.GestoreController">
+              <point x="24.166666666666515" y="-69.5" />
+              <point x="2599.396904761905" y="749.0" />
+              <point x="2932.9059523809524" y="749.0" />
+              <point x="-33.75" y="81.5" />
+            </edge>
+            <edge source="Model.DAO.MongoDBDataDAOimpl" target="Model.DAO.DataDAO">
+              <point x="52.5" y="-25.5" />
+              <point x="1267.8802380952384" y="799.0" />
+              <point x="1518.0326190476194" y="799.0" />
+              <point x="1518.0326190476194" y="403.0" />
+              <point x="2077.6052380952383" y="403.0" />
+              <point x="-52.5" y="25.5" />
+            </edge>
+            <edge source="View.DashboardcittaController" target="Controller.EdificioController">
+              <point x="-24.166666666666515" y="-47.5" />
+              <point x="2207.063571428572" y="799.0" />
+              <point x="2227.7083333333335" y="799.0" />
+              <point x="-96.0" y="37.0" />
+            </edge>
+            <edge source="Model.DAO.MongoDBEdificioDAOimpl" target="Model.DAO.MongoDBDAOFactory">
+              <point x="72.0" y="-25.5" />
+              <point x="936.75" y="799.0" />
+              <point x="922.25" y="799.0" />
+              <point x="0.0" y="81.0" />
+            </edge>
+            <edge source="Controller.ZonaController" target="Model.DAO.ZonaDAO">
+              <point x="-72.0" y="-37.0" />
+              <point x="1291.5326190476194" y="373.0" />
+              <point x="295.4492857142859" y="373.0" />
+              <point x="64.75" y="25.5" />
+            </edge>
+            <edge source="Model.DAO.MongoDBSensorDAOimpl" target="Model.DAO.SensorDAO">
+              <point x="-104.5" y="-47.5" />
+              <point x="383.5" y="413.0" />
+              <point x="484.6992857142859" y="413.0" />
+              <point x="-104.5" y="47.5" />
+            </edge>
+            <edge source="Model.VO.Zona" target="Model.VO.Sensor">
+              <point x="20.0" y="-14.5" />
+              <point x="3800.7809523809524" y="799.0" />
+              <point x="3842.9059523809524" y="799.0" />
+              <point x="3842.9059523809524" y="413.0" />
+              <point x="3819.495238095238" y="413.0" />
+              <point x="145.0" y="136.5" />
+            </edge>
+            <edge source="View.DashboardcittaController" target="Model.VO.Edificio">
+              <point x="120.83333333333348" y="-47.5" />
+              <point x="2352.063571428572" y="779.0" />
+              <point x="3418.271904761905" y="779.0" />
+              <point x="-91.75" y="103.0" />
+            </edge>
+            <edge source="Controller.SensoreController" target="Model.DAO.SensorDAO">
+              <point x="-104.5" y="-59.0" />
+              <point x="1846.2083333333335" y="363.0" />
+              <point x="693.6992857142859" y="363.0" />
+              <point x="104.5" y="47.5" />
+            </edge>
+            <edge source="View.DashBoardController" target="Controller.SensoreController">
+              <point x="-120.83333333333348" y="-69.5" />
+              <point x="2932.235" y="699.0" />
+              <point x="2090.041666666667" y="699.0" />
+              <point x="139.33333333333348" y="59.0" />
+            </edge>
+            <edge source="Model.DAO.MongoDBGestoreDAOimpl" target="Model.DAO.GestoreDAO">
+              <point x="80.25" y="-47.5" />
+              <point x="1602.1202380952382" y="799.0" />
+              <point x="1731.2083333333335" y="799.0" />
+              <point x="1731.2083333333335" y="413.0" />
+              <point x="2335.3552380952383" y="413.0" />
+              <point x="-80.25" y="47.5" />
+            </edge>
+            <edge source="View.DashboardcittaController" target="Controller.SensoreController">
+              <point x="-72.5" y="-47.5" />
+              <point x="2158.7302380952383" y="769.0" />
+              <point x="1811.375" y="769.0" />
+              <point x="-139.33333333333326" y="59.0" />
+            </edge>
+            <edge source="Controller.EdificioController" target="Model.DAO.DAOFactory">
+              <point x="72.0" y="-37.0" />
+              <point x="2395.7083333333335" y="333.0" />
+              <point x="1730.8600000000004" y="333.0" />
+              <point x="22.166666666666742" y="81.0" />
+            </edge>
+            <edge source="Model.DAO.MongoDBGestoreDAOimpl" target="Model.DAO.MongoDBDAOFactory">
+              <point x="-80.25" y="-47.5" />
+              <point x="1441.6202380952382" y="789.0" />
+              <point x="1005.8499999999999" y="789.0" />
+              <point x="83.60000000000002" y="81.0" />
+            </edge>
+            <edge source="Controller.DataController" target="Model.DAO.DataDAO">
+              <point x="59.0" y="-37.0" />
+              <point x="2664.7083333333335" y="313.0" />
+              <point x="2182.6052380952383" y="313.0" />
+              <point x="52.5" y="25.5" />
+            </edge>
+            <edge source="Controller.GestoreController" target="Model.DAO.GestoreDAO">
+              <point x="0.0" y="-81.5" />
+              <point x="2966.6559523809524" y="293.0" />
+              <point x="2495.8552380952383" y="293.0" />
+              <point x="80.25" y="47.5" />
+            </edge>
+            <edge source="Controller.GestoreController" target="Model.VO.Gestore">
+              <point x="90.0" y="-81.5" />
+              <point x="3056.6559523809524" y="413.0" />
+              <point x="3099.120238095238" y="413.0" />
+              <point x="0.0" y="114.0" />
+            </edge>
+            <edge source="View.DashboardAreaController" target="Model.VO.Sensor">
+              <point x="120.83333333333348" y="-69.5" />
+              <point x="2696.063571428572" y="769.0" />
+              <point x="3199.985" y="769.0" />
+              <point x="3199.985" y="403.0" />
+              <point x="3587.495238095238" y="403.0" />
+              <point x="-87.0" y="136.5" />
+            </edge>
+            <edge source="Model.DAO.MongoDBZonaDAOimpl" target="Model.DAO.MongoDBDAOFactory">
+              <point x="64.75" y="-25.5" />
+              <point x="194.25" y="789.0" />
+              <point x="838.6500000000001" y="789.0" />
+              <point x="-83.60000000000002" y="81.0" />
+            </edge>
+            <edge source="View.DashboardcittaController" target="Controller.DataController">
+              <point x="24.166666666666515" y="-47.5" />
+              <point x="2255.396904761905" y="729.0" />
+              <point x="2527.041666666667" y="729.0" />
+              <point x="-78.66666666666652" y="37.0" />
+            </edge>
+            <edge source="View.loginPageController" target="Controller.GestoreController">
+              <point x="0.0" y="-25.5" />
+              <point x="3324.5683333333336" y="659.0" />
+              <point x="3067.9059523809524" y="659.0" />
+              <point x="101.25" y="81.5" />
+            </edge>
+            <edge source="Model.VO.Edificio" target="Model.VO.Sensor">
+              <point x="0.0" y="-103.0" />
+              <point x="3510.021904761905" y="413.0" />
+              <point x="3645.495238095238" y="413.0" />
+              <point x="-29.0" y="136.5" />
+            </edge>
+            <edge source="Controller.ZonaController" target="Model.DAO.DAOFactory">
+              <point x="72.0" y="-37.0" />
+              <point x="1435.5326190476194" y="393.0" />
+              <point x="1642.1933333333336" y="393.0" />
+              <point x="-66.5" y="81.0" />
+            </edge>
+            <edge source="View.DashBoardController" target="Controller.GestoreController">
+              <point x="24.166666666666515" y="-69.5" />
+              <point x="3077.235" y="669.0" />
+              <point x="3000.4059523809524" y="669.0" />
+              <point x="33.75" y="81.5" />
+            </edge>
+            <edge source="Controller.GestoreController" target="Model.DAO.DAOFactory">
+              <point x="-90.0" y="-81.5" />
+              <point x="2876.6559523809524" y="303.0" />
+              <point x="1819.5266666666669" y="303.0" />
+              <point x="110.83333333333326" y="81.0" />
+            </edge>
+            <edge source="View.DashboardcittaController" target="Controller.GestoreController">
+              <point x="72.5" y="-47.5" />
+              <point x="2303.7302380952383" y="739.0" />
+              <point x="2865.4059523809524" y="739.0" />
+              <point x="-101.25" y="81.5" />
+            </edge>
+            <edge source="Controller.SensoreController" target="Model.DAO.DAOFactory">
+              <point x="104.5" y="-59.0" />
+              <point x="2055.2083333333335" y="353.0" />
+              <point x="1686.5266666666669" y="353.0" />
+              <point x="-22.166666666666742" y="81.0" />
+            </edge>
+            <edge source="Model.DAO.MongoDBZonaDAOimpl" target="Model.DAO.ZonaDAO">
+              <point x="-64.75" y="-25.5" />
+              <point x="64.75" y="413.0" />
+              <point x="165.9492857142859" y="413.0" />
+              <point x="-64.75" y="25.5" />
+            </edge>
+            <edge source="Model.DAO.MongoDBEdificioDAOimpl" target="Model.DAO.EdificioDAO">
+              <point x="-72.0" y="-25.5" />
+              <point x="792.75" y="779.0" />
+              <point x="789.0" y="779.0" />
+              <point x="789.0" y="413.0" />
+              <point x="890.1992857142859" y="413.0" />
+              <point x="-72.0" y="25.5" />
+            </edge>
+            <edge source="View.DashboardAreaController" target="Controller.SensoreController">
+              <point x="-120.83333333333348" y="-69.5" />
+              <point x="2454.396904761905" y="719.0" />
+              <point x="1950.7083333333335" y="719.0" />
+              <point x="0.0" y="59.0" />
+            </edge>
+            <edge source="View.DashboardAreaController" target="Controller.DataController">
+              <point x="-24.166666666666515" y="-69.5" />
+              <point x="2551.063571428572" y="729.0" />
+              <point x="2605.7083333333335" y="729.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+            <edge source="View.DashBoardController" target="Controller.EdificioController">
+              <point x="-72.5" y="-69.5" />
+              <point x="2980.5683333333336" y="689.0" />
+              <point x="2419.7083333333335" y="689.0" />
+              <point x="96.0" y="37.0" />
+            </edge>
+            <edge source="View.DashBoardController" target="Controller.DataController">
+              <point x="-24.166666666666515" y="-69.5" />
+              <point x="3028.901666666667" y="679.0" />
+              <point x="2684.375" y="679.0" />
+              <point x="78.66666666666652" y="37.0" />
+            </edge>
+            <edge source="Model.DAO.MongoDBDataDAOimpl" target="Model.DAO.MongoDBDAOFactory">
+              <point x="-52.5" y="-25.5" />
+              <point x="1162.8802380952384" y="799.0" />
+              <point x="964.05" y="799.0" />
+              <point x="41.799999999999955" y="81.0" />
+            </edge>
+            <edge source="Model.DAO.MongoDBSensorDAOimpl" target="Model.DAO.MongoDBDAOFactory">
+              <point x="104.5" y="-47.5" />
+              <point x="592.5" y="799.0" />
+              <point x="880.45" y="799.0" />
+              <point x="-41.799999999999955" y="81.0" />
+            </edge>
+            <edge source="Model.VO.Zona" target="Model.VO.Edificio">
+              <point x="-20.0" y="-14.5" />
+              <point x="3760.7809523809524" y="779.0" />
+              <point x="3601.771904761905" y="779.0" />
+              <point x="91.75" y="103.0" />
+            </edge>
+            <edge source="Controller.DataController" target="Model.DAO.DAOFactory">
+              <point x="-59.0" y="-37.0" />
+              <point x="2546.7083333333335" y="323.0" />
+              <point x="1775.1933333333336" y="323.0" />
+              <point x="66.5" y="81.0" />
+            </edge>
+            <edge source="View.DashboardcittaController" target="Controller.ZonaController">
+              <point x="-120.83333333333348" y="-47.5" />
+              <point x="2110.396904761905" y="779.0" />
+              <point x="1363.5326190476194" y="779.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+            <edge source="View.DashboardAreaController" target="Controller.EdificioController">
+              <point x="-72.5" y="-69.5" />
+              <point x="2502.7302380952383" y="709.0" />
+              <point x="2323.7083333333335" y="709.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.4704470863210849" x="1448.0" y="373.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DashBoardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        <state relative-caret-position="15">
+          <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DashboardcittaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="70" column="76" selection-start-line="70" selection-start-column="76" selection-end-line="70" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -634,19 +901,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/DashBoardController.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/DataDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="185" column="50" selection-start-line="185" selection-start-column="50" selection-end-line="185" selection-end-column="50" />
+        <state relative-caret-position="90">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/DashboardcittaController.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDataDAOimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="182" column="17" selection-start-line="182" selection-start-column="17" selection-end-line="182" selection-end-column="17" />
+        <state relative-caret-position="285">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="27" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/DAO/MongoDBDAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/loginPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/loginPage.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="127" selection-start-line="9" selection-start-column="127" selection-end-line="9" selection-end-column="127" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
   </component>
   <component name="masterDetails">
