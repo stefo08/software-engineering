@@ -52,3 +52,6 @@ out/production/DashBoard/Controller/DataController.class
 .idea/vcs.xml
 .idea/workspace.xml
 Prototipo/DashBoard/src/Model/DAO/MongoDBDAOFactory.java
+Prototipo/TestingUnity/src/TestClassSimulator.java
+Prototipo/DashBoard/src/View/DashBoardController.java
+Prototipo/DashBoard/src/Model/DAO/MongoDBDAOFactory.java
