@@ -23,10 +23,9 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class DashboardcittaController implements Initializable {
 
@@ -56,7 +55,7 @@ public class DashboardcittaController implements Initializable {
         controllerZona = new ZonaController();
         controllerData = new DataController();
         listaedifici = new ArrayList<Edificio>();
-        format = new SimpleDateFormat("HH:mm:ss");
+        format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ITALY);
         Run();
 
     }
@@ -106,16 +105,25 @@ public class DashboardcittaController implements Initializable {
 
         Thread f = new Thread(() -> {
             while (true) {
-                    for(Edificio e : listaedifici){
-                        for(Sensor s : e.getList()){
-                            Sensor temp = controllerData.getLastData(s.getID());
-                            for (Object items : Table.getItems()) {
-                                Edificio ed = (Edificio) items;
-                                List<Sensor> ls = ed.getList();
-                                for(Sensor s2 : ls){
-                                    if (temp.getNumSensore() == s2.getNumSensore()) {
-                                        s2.setValue(temp.getValue());
+                for (Edificio e : listaedifici) {
+                    for (Sensor s : e.getList()) {
+                        Sensor temp = controllerData.getLastData(s.getID());
+                        for (Object items : Table.getItems()) {
+                            Edificio ed = (Edificio) items;
+                            List<Sensor> ls = ed.getList();
+                            for (Sensor s2 : ls) {
+                                if (temp.getNumSensore() == s2.getNumSensore()) {
+                                    Date old = null;
+                                    Date curr = null;
+                                    try {
+                                        curr = format.parse(s2.getTime());
+                                        old = format.parse(temp.getTime());
+                                    } catch (ParseException k) {
+                                        k.printStackTrace();
+                                    }
+                                    if (old.after(curr)) {
                                         s2.setTime(temp.getTime());
+                                        s2.setValue(temp.getValue());
                                     }
                                 }
                                 Table.refresh();
@@ -124,9 +132,10 @@ public class DashboardcittaController implements Initializable {
                     }
                     try {
                         Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                    } catch (InterruptedException m) {
+                        m.printStackTrace();
                     }
+                }
             }
         });
         f.start();
@@ -141,13 +150,13 @@ public class DashboardcittaController implements Initializable {
                     float err = 0;
                     for (Sensor s : e.getList()){
                         int value = s.getValue(), max = s.getMaxRange(), min = s.getMinRange();
-                        if (value > (max + 2) || value < (min - 3)) err++;
+                        if (value > (max + 3) || value < (min - 3)) err++;
                     }
                     float res = err/count;
                     System.out.println(res);
                     if (res >= 0.80) {e.setLevelerror(3);}
-                    if ((res >= 0.60) && (res <= 0.75)) {e.setLevelerror(2);}
-                    if (res < 0.60) {e.setLevelerror(1);}
+                    if ((res > 0.60) && (res < 0.80)) {e.setLevelerror(2);}
+                    if (res <= 0.60) {e.setLevelerror(1);}
                     Table.refresh();
                 }
                 try {

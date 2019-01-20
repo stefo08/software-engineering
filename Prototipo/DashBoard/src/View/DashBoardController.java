@@ -215,7 +215,7 @@ public class DashBoardController implements Initializable {
 
                                 Thread thread = new Thread(() -> {
                                     try {
-                                        Thread.sleep(600);
+                                        Thread.sleep(2000);
                                         if (alert.isShowing()) {
                                             Platform.runLater(() -> alert.close());
                                         }
