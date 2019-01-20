@@ -27,4 +27,13 @@ public class MongoDBDataDAOimpl implements DataDAO {
         return s;
 
     }
+
+    public void setError(String id, int numb, int val, String time){
+
+        DBObject sens = new BasicDBObject().append("Temp", time).
+                append("IDSensore", id ).
+                append("Number", numb).
+                append("TimeStamp", time);
+        dataCollection.insert(sens);
+    }
 }

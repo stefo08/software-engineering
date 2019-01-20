@@ -118,10 +118,10 @@ public class DashboardcittaController implements Initializable {
                                     try {
                                         curr = format.parse(s2.getTime());
                                         old = format.parse(temp.getTime());
-                                    } catch (ParseException k) {
-                                        k.printStackTrace();
+                                    } catch (ParseException er) {
+                                        er.printStackTrace();
                                     }
-                                    if (old.after(curr)) {
+                                    if (old.after(curr)){
                                         s2.setTime(temp.getTime());
                                         s2.setValue(temp.getValue());
                                     }
@@ -149,13 +149,14 @@ public class DashboardcittaController implements Initializable {
                     int count = e.getNumSensori();
                     float err = 0;
                     for (Sensor s : e.getList()){
-                        int value = s.getValue(), max = s.getMaxRange(), min = s.getMinRange();
-                        if (value > (max + 3) || value < (min - 3)) err++;
+                        int value = s.getValue(), maxra = s.getMaxRange(), minra = s.getMinRange();
+                        if (value > (maxra + 3) || value < (minra - 3)) err++;
                     }
+
                     float res = err/count;
                     System.out.println(res);
-                    if (res >= 0.80) {e.setLevelerror(3);}
-                    if ((res > 0.60) && (res < 0.80)) {e.setLevelerror(2);}
+                    if (res >= 0.70) {e.setLevelerror(3);}
+                    if ((res > 0.60) && (res < 0.70)) {e.setLevelerror(2);}
                     if (res <= 0.60) {e.setLevelerror(1);}
                     Table.refresh();
                 }
