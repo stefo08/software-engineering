@@ -201,7 +201,6 @@ public class DashBoardController implements Initializable {
                         tempor.setValue(0);
                         String time = format.format(new Date());
                         tempor.setTime(time);
-                        controllerData.setError(tempor.getID(), tempor.getNumSensore(), tempor.getValue(), tempor.getTime());
                         Platform.runLater(new Runnable() {
 
                             @Override

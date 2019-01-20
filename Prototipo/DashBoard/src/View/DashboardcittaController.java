@@ -112,24 +112,23 @@ public class DashboardcittaController implements Initializable {
                             Edificio ed = (Edificio) items;
                             List<Sensor> ls = ed.getList();
                             for (Sensor s2 : ls) {
-                                if (temp.getNumSensore() == s2.getNumSensore()) {
-                                    Date old = null;
-                                    Date curr = null;
-                                    try {
-                                        curr = format.parse(s2.getTime());
-                                        old = format.parse(temp.getTime());
-                                    } catch (ParseException er) {
-                                        er.printStackTrace();
-                                    }
-                                    if (old.after(curr)){
-                                        s2.setTime(temp.getTime());
-                                        s2.setValue(temp.getValue());
-                                    }
+                                if (s2.getTime() == null) s2.setTime(format.format(new Date()));
+                                Date old = null;
+                                Date curr = null;
+                                try {
+                                    curr = format.parse(s2.getTime());
+                                    old = format.parse(temp.getTime());
+                                } catch (ParseException k) {
+                                    k.printStackTrace();
+                                }
+                                if (old.after(curr)){
+                                    s2.setTime(temp.getTime());
+                                    s2.setValue(temp.getValue());
+                                }
                                 }
                                 Table.refresh();
                             }
                         }
-                    }
                     try {
                         Thread.sleep(10);
                     } catch (InterruptedException m) {
@@ -141,7 +140,8 @@ public class DashboardcittaController implements Initializable {
         f.start();
 
 
-        Thread controlError = new Thread(() -> {
+        Thread controlError;
+        controlError = new Thread(() -> {
 
             while (true) {
                 for(Object itemtab : Table.getItems()){
@@ -149,11 +149,32 @@ public class DashboardcittaController implements Initializable {
                     int count = e.getNumSensori();
                     float err = 0;
                     for (Sensor s : e.getList()){
+                        Date oldval = null;
+                        try {
+                            if (s.getTime() != null)
+                                oldval = format.parse(s.getTime());
+                            else {
+                                oldval = new Date();
+                                s.setTime(format.format(oldval));
+                            }
+                        } catch (ParseException pe) {
+                            pe.printStackTrace();
+                        }
+                        Date data = new Date();
+                        long diff = data.getTime() - oldval.getTime();
+                        long min = (diff/60000);
+                        if (min >= 1) {
+                            System.out.println("1 minuto passato");
+                            s.setValue(0);
+                            String time = format.format(new Date());
+                            s.setTime(time);
+                        }
                         int value = s.getValue(), maxra = s.getMaxRange(), minra = s.getMinRange();
-                        if (value > (maxra + 3) || value < (minra - 3)) err++;
+                        if (value > (maxra + 3) || value < (minra - 3)){
+                            err += 1;
+                        }
                     }
-
-                    float res = err/count;
+                    float res = (err/count);
                     System.out.println(res);
                     if (res >= 0.70) {e.setLevelerror(3);}
                     if ((res > 0.60) && (res < 0.70)) {e.setLevelerror(2);}
