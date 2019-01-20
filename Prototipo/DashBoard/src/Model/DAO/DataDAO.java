@@ -5,5 +5,6 @@ import Model.VO.Sensor;
 public interface DataDAO  {
 
     public Sensor getData(String idSensore);
+    public void setError(String id, int numb, int val, String time);
 
 }

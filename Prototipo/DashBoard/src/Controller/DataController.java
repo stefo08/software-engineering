@@ -21,4 +21,8 @@ public class DataController {
         return s;
     }
 
+    public void setError(String id, int numb, int value, String time){
+        dataDAO.setError(id, numb, value, time);
+    }
+
 }
