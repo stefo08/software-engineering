@@ -151,7 +151,7 @@ public class TestClassSimulator implements Runnable{
 
     public int fakeTemperature(int min, int max){
         int temp = 0;
-        temp = r.nextInt((max + 7) - (min -5)) + min;
+        temp = r.nextInt((max + 6) - (min -5)) + min;
         return temp;
     }
 
