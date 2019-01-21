@@ -50,6 +50,8 @@ public class loginPageController {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Dashboardcitta.fxml"));
                     Parent root = (Parent) fxmlLoader.load();
                     Stage stage1 = new Stage();
+                    stage1.setTitle("Dashboard Zona - Visualizza Dati");
+                    stage1.getIcons().add(new Image("View/icon.png"));
                     stage1.setScene(new Scene(root));
                     stage1.show();
                 }

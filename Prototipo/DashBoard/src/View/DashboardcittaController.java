@@ -30,13 +30,14 @@ import java.util.*;
 public class DashboardcittaController implements Initializable {
 
     @FXML
-    private Button logoutButton;
+    private Button logoutButton, logoutButton1;
     @FXML
     private AnchorPane rootPane;
     @FXML
-    private TableView Table;
+    private TableView Table, Table1;
     @FXML
-    private TableColumn NameColumn, ZoneColumn, numColumn, GestoreColumn;
+    private TableColumn NameColumn, ZoneColumn, numColumn, GestoreColumn, NumberColumn,
+        ValueColumn, TimeColumn;
 
     private List<Edificio> listaedifici;
     private GestoreController controllerGestore;
@@ -45,6 +46,7 @@ public class DashboardcittaController implements Initializable {
     private ZonaController controllerZona;
     private DataController controllerData;
     private DateFormat format;
+    ObservableList<Sensor> valuesSens;
 
     @Override
     public void initialize(URL location, ResourceBundle resource){
@@ -66,10 +68,15 @@ public class DashboardcittaController implements Initializable {
         listaedifici = controllerZona.getEdificiCIttà(logged.getUser());
         ObservableList<Edificio> values = FXCollections.
                 observableArrayList();
+        valuesSens = FXCollections.
+                observableArrayList();
         NameColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Nome"));
         ZoneColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Zona"));
         GestoreColumn.setCellValueFactory(new PropertyValueFactory<Edificio, String>("Owner"));
         numColumn.setCellValueFactory(new PropertyValueFactory<Edificio, Integer>("numSensori"));
+        NumberColumn.setCellValueFactory(new PropertyValueFactory<Sensor, Integer>("numSensore"));
+        ValueColumn.setCellValueFactory(new PropertyValueFactory<Sensor, Integer>("value"));
+        TimeColumn.setCellValueFactory(new PropertyValueFactory<Sensor, Integer>("Time"));
 
         for (Edificio e : listaedifici){
             int count = 0;
@@ -77,14 +84,16 @@ public class DashboardcittaController implements Initializable {
             e.setList(listasensori);
             for (Sensor s : listasensori){
                 count++;
+                s.setTime(format.format(new Date()));
+                //valuesSens.add(s);
             }
             System.out.println(count);
             e.setNumSensori(count);
             values.add(e);
         }
 
-
         Table.setItems(values);
+
 
         Table.setRowFactory(tv -> new TableRow<Edificio>() {
             @Override
@@ -96,8 +105,24 @@ public class DashboardcittaController implements Initializable {
                     if ( item.getLevelerror() == 1 ){
                         setStyle("-fx-background-color: #007000;");
                     }
-                    if(item.getLevelerror() == 2 ) setStyle("-fx-background-color: #c97101;");
-                    if(item.getLevelerror() == 3 ) setStyle("-fx-background-color: #840910;");
+                    if(item.getLevelerror() == 2 ) setStyle("-fx-background-color: #de8101;");
+                    if(item.getLevelerror() == 3 ) setStyle("-fx-background-color: #9e0911;");
+                }
+            }
+        });
+
+        Table1.setRowFactory(tv -> new TableRow<Sensor>() {
+            @Override
+            public void updateItem(Sensor item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null) {
+                    setStyle("-fx-background-color: #ffffff;");
+                } else {
+                    int value = item.getValue(), max = item.getMaxRange(), min = item.getMinRange();
+                    if (value > max + 3 || value < min - 3) setStyle("-fx-background-color: #9e0911;");
+                    if ((value > max  && value <= max + 3 ) || (value < min && value >= min - 3))
+                        setStyle("-fx-background-color: #de8101;");
+                    if (value >= min && value <= max) setStyle("-fx-background-color: #007000;");
                 }
             }
         });
@@ -105,28 +130,49 @@ public class DashboardcittaController implements Initializable {
 
         Thread f = new Thread(() -> {
             while (true) {
-                for (Edificio e : listaedifici) {
-                    for (Sensor s : e.getList()) {
+                for (Object e : Table.getItems()) {
+                    for (Sensor s : ((Edificio) e).getList()) {
                         Sensor temp = controllerData.getLastData(s.getID());
-                        for (Object items : Table.getItems()) {
-                            Edificio ed = (Edificio) items;
-                            List<Sensor> ls = ed.getList();
-                            for (Sensor s2 : ls) {
-                                if (s2.getTime() == null) s2.setTime(format.format(new Date()));
-                                Date old = null;
-                                Date curr = null;
-                                try {
-                                    curr = format.parse(s2.getTime());
-                                    old = format.parse(temp.getTime());
-                                } catch (ParseException k) {
-                                    k.printStackTrace();
+                        for (Sensor s2 : ((Edificio) e).getList()) {
+                                if (temp.getNumSensore() == s2.getNumSensore()) {
+                                    Date newtime = null;
+                                    Date oldtime = null;
+                                        try {
+                                            newtime = format.parse(s2.getTime());
+                                        } catch (ParseException e1) {
+                                            e1.printStackTrace();
+                                        }
+                                    try {
+                                        oldtime = format.parse(temp.getTime());
+                                    } catch (ParseException e1) {
+                                        e1.printStackTrace();
+                                    }
+                                    if (oldtime.after(newtime)) {
+                                        s2.setTime(temp.getTime());
+                                        s2.setValue(temp.getValue());
+                                        for (Object obj : Table1.getItems()){
+                                            Sensor temp2 = (Sensor) obj;
+                                            if (temp2.getID().equals(s2.getID()))
+                                            temp2.setValue(temp.getValue());
+                                        }
+                                        Table1.refresh();
+                                    } else {
+                                        Date newTime = new Date();
+                                        long diff = (newTime.getTime() - newtime.getTime()) / 60000;
+                                        if (diff >= 1) {
+                                            s2.setTime(format.format(newTime));
+                                            s2.setValue(0);
+                                            for (Object obj : Table1.getItems()){
+                                                Sensor temp2 = (Sensor) obj;
+                                                if (temp2.getID().equals(s2.getID()))
+                                                    temp2.setValue(0);
+                                            }
+                                            Table1.refresh();
+                                        }
+                                    }
                                 }
-                                if (old.after(curr)){
-                                    s2.setTime(temp.getTime());
-                                    s2.setValue(temp.getValue());
-                                }
-                                }
-                                Table.refresh();
+                            }
+                            Table.refresh();
                             }
                         }
                     try {
@@ -135,7 +181,6 @@ public class DashboardcittaController implements Initializable {
                         m.printStackTrace();
                     }
                 }
-            }
         });
         f.start();
 
@@ -149,26 +194,6 @@ public class DashboardcittaController implements Initializable {
                     int count = e.getNumSensori();
                     float err = 0;
                     for (Sensor s : e.getList()){
-                        Date oldval = null;
-                        try {
-                            if (s.getTime() != null)
-                                oldval = format.parse(s.getTime());
-                            else {
-                                oldval = new Date();
-                                s.setTime(format.format(oldval));
-                            }
-                        } catch (ParseException pe) {
-                            pe.printStackTrace();
-                        }
-                        Date data = new Date();
-                        long diff = data.getTime() - oldval.getTime();
-                        long min = (diff/60000);
-                        if (min >= 1) {
-                            System.out.println("1 minuto passato");
-                            s.setValue(0);
-                            String time = format.format(new Date());
-                            s.setTime(time);
-                        }
                         int value = s.getValue(), maxra = s.getMaxRange(), minra = s.getMinRange();
                         if (value > (maxra + 3) || value < (minra - 3)){
                             err += 1;
@@ -176,13 +201,13 @@ public class DashboardcittaController implements Initializable {
                     }
                     float res = (err/count);
                     System.out.println(res);
-                    if (res >= 0.70) {e.setLevelerror(3);}
-                    if ((res > 0.60) && (res < 0.70)) {e.setLevelerror(2);}
+                    if (res >= 0.80) {e.setLevelerror(3);}
+                    if ((res > 0.60) && (res < 0.80)) {e.setLevelerror(2);}
                     if (res <= 0.60) {e.setLevelerror(1);}
                     Table.refresh();
                 }
                 try {
-                    Thread.sleep(200);
+                    Thread.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -198,4 +223,24 @@ public class DashboardcittaController implements Initializable {
         rootPane.getChildren().setAll(pane);
     }
 
-}
+    @FXML
+    private void Visualizza(ActionEvent Event) throws IOException {
+
+            valuesSens.removeAll();
+            Table1.getItems().clear();
+            Edificio selected = (Edificio) Table.getSelectionModel().getSelectedItem();
+            List<Sensor> mostavalori = new ArrayList<Sensor>();
+            List<Object> obj = Table.getItems();
+            for (Object tableed : Table.getItems()){
+                Edificio temp = (Edificio) tableed;
+                if (selected.getNome().equals(temp.getNome())){
+                    mostavalori = temp.getList();
+                }
+            }
+            for (Sensor s : mostavalori)
+            valuesSens.add(s);
+            Table1.setItems(valuesSens);
+
+        }
+    }
+
