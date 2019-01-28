@@ -21,6 +21,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -194,7 +196,6 @@ public class DashBoardController implements Initializable {
                     Date data = new Date();
                     long diff = data.getTime() - oldval.getTime();
                     long min = (diff/60000);
-                    System.out.println(min);
                     if (min >= 1) {
                         tempor.setValue(0);
                         String time = format.format(new Date());
@@ -281,8 +282,23 @@ public class DashBoardController implements Initializable {
 
     @FXML
     private void logout(ActionEvent Event) throws IOException {
-        AnchorPane pane = FXMLLoader.load( getClass().getResource("loginPage.fxml"));
-        rootPane.getChildren().setAll(pane);
+
+        try {
+
+            Stage windows = (Stage) rootPane.getScene().getWindow();
+            windows.close();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("loginPage.fxml"));
+            Parent root = (Parent) loader.load();
+            Stage login = new Stage();
+            login.setScene(new Scene(root));
+            login.setTitle("Biblioteca Digitale UNIVAQ");
+            login.show();
+            login.setResizable(false);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
