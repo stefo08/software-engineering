@@ -176,7 +176,7 @@ public class DashboardcittaController implements Initializable {
                             }
                         }
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(280);
                     } catch (InterruptedException m) {
                         m.printStackTrace();
                     }
@@ -207,7 +207,7 @@ public class DashboardcittaController implements Initializable {
                     Table.refresh();
                 }
                 try {
-                    Thread.sleep(300);
+                    Thread.sleep(400);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

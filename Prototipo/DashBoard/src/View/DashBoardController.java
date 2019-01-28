@@ -89,9 +89,7 @@ public class DashBoardController implements Initializable {
 
         Gestore sessiongest = controllerGestore.getLoggedGestore();
         String idEdificio = controllerGestore.getGestoreEdificio(sessiongest.getUser());
-        //DBObject sensori = controllerEdificio.getSensoriEdificio(idEdificio);
-        //System.out.println(sensori);
-        listasensori = controllerSensore.getSensoriEdificio("Coppito 1");
+        listasensori = controllerSensore.getSensoriEdificio(idEdificio);
         System.out.println(listasensori);
         ObservableList<Sensor> values = FXCollections.
                 observableArrayList();
@@ -159,7 +157,7 @@ public class DashBoardController implements Initializable {
                     }
                 }
                 try {
-                    Thread.sleep(10);
+                    Thread.sleep(250);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -234,7 +232,7 @@ public class DashBoardController implements Initializable {
                     Table.refresh();
                 }
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
