@@ -16,6 +16,7 @@ import com.sun.xml.internal.bind.v2.model.core.ID;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -62,6 +63,7 @@ public class DashBoardController implements Initializable {
     private DataController controllerData;
     private DateFormat format;
     Sensor sensore;
+    private boolean close;
 
     /*
      * Il metodo initialize inizializza i Controller (Gestore, Sensore e Edificio)
@@ -78,6 +80,7 @@ public class DashBoardController implements Initializable {
         listasensori = new ArrayList<Sensor>();
         format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ITALY);
         sensore = new Sensor();
+        close = true;
         Run();
 
     }
@@ -135,37 +138,43 @@ public class DashBoardController implements Initializable {
          * effettuato un controllo per ogni sensore presente, se il dato che arriva aggiorna un sensore, solleva il metodo sopra setRowFactory.
          */
 
-        Thread f = new Thread(() -> {
-            while (true) {
-                for (Sensor s : listasensori) {
-                    Sensor temp = controllerData.getLastData(s.getID());
-                    for (Object items : Table.getItems()) {
-                        Sensor temptable = (Sensor) items;
-                        if ((temptable.getNumSensore() == temp.getNumSensore())){
-                            Date old = null;
-                            Date curr = null;
-                            try {
-                                curr = format.parse(temptable.getTime());
-                                old = format.parse(temp.getTime());
-                            } catch (ParseException e) {
-                                e.printStackTrace();
+        Task<Void> task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                while (close) {
+                    for (Sensor s : listasensori) {
+                        Sensor temp = controllerData.getLastData(s.getID());
+                        for (Object items : Table.getItems()) {
+                            Sensor temptable = (Sensor) items;
+                            if ((temptable.getNumSensore() == temp.getNumSensore())) {
+                                Date old = null;
+                                Date curr = null;
+                                try {
+                                    curr = format.parse(temptable.getTime());
+                                    old = format.parse(temp.getTime());
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+                                if (old.after(curr)) {
+                                    temptable.setTime(temp.getTime());
+                                    temptable.setValue(temp.getValue());
+                                }
                             }
-                            if (old.after(curr)){
-                                temptable.setTime(temp.getTime());
-                                temptable.setValue(temp.getValue());
-                            }
+                            Table.refresh();
                         }
-                        Table.refresh();
+                    }
+                    try {
+                        Thread.sleep(250);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
-                try {
-                    Thread.sleep(250);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                return null;
             }
-        });
-        f.start();
+            };
+            Thread th = new Thread(task);
+            th.setDaemon(false);
+            th.start();
 
         /*
          * Il Thread si occupa della verifica della correttezza di funzionamento dei Sensori. Se passato un minuto da l'ultimo invio il Sensore non
@@ -175,73 +184,79 @@ public class DashBoardController implements Initializable {
 
 
 
-        new Thread(() -> {
+        Task<Void> task2 = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
 
-        while(true) {
-            for (Object item : Table.getItems()) {
-                Sensor tempor = (Sensor) item;
-                Date oldval = null;
-                    try {
+                while (close) {
+                    for (Object item : Table.getItems()) {
+                        Sensor tempor = (Sensor) item;
+                        Date oldval = null;
+                        try {
 
-                        if (tempor.getTime() != null)
-                        oldval = format.parse(tempor.getTime());
-                        else {
-                            oldval = new Date();
-                            tempor.setTime(format.format(oldval));
+                            if (tempor.getTime() != null)
+                                oldval = format.parse(tempor.getTime());
+                            else {
+                                oldval = new Date();
+                                tempor.setTime(format.format(oldval));
+                            }
+
+                        } catch (ParseException e) {
+                            e.printStackTrace();
                         }
+                        Date data = new Date();
+                        long diff = data.getTime() - oldval.getTime();
+                        long min = (diff / 60000);
+                        System.out.println(min);
+                        if (min >= 1) {
+                            tempor.setValue(0);
+                            String time = format.format(new Date());
+                            tempor.setTime(time);
+                            Platform.runLater(new Runnable() {
 
-                    } catch (ParseException e) {
+                                @Override
+                                public void run() {
+                                    Alert alert = new Alert(Alert.AlertType.NONE);
+                                    alert.setTitle("Possibile malfunzionamento Sensore");
+                                    alert.setContentText("Il sensore " + tempor.getNumSensore() + " sembra" +
+                                            " non funzionare correttamente");
+                                    ButtonType buttonTypeCancel = new ButtonType("OK", ButtonBar.ButtonData.CANCEL_CLOSE);
+                                    alert.getButtonTypes().setAll(buttonTypeCancel);
+                                    ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("View/icon.png"));
+
+                                    Thread thread = new Thread(() -> {
+                                        try {
+                                            Thread.sleep(2000);
+                                            if (alert.isShowing()) {
+                                                Platform.runLater(() -> alert.close());
+                                            }
+                                        } catch (Exception exp) {
+                                            exp.printStackTrace();
+                                        }
+                                    });
+
+                                    thread.setDaemon(false);
+                                    thread.start();
+                                    alert.showAndWait();
+                                }
+                            });
+
+                        }
+                        Table.refresh();
+                    }
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    Date data = new Date();
-                    long diff = data.getTime() - oldval.getTime();
-                    long min = (diff/60000);
-                    if (min >= 1) {
-                        tempor.setValue(0);
-                        String time = format.format(new Date());
-                        tempor.setTime(time);
-                        Platform.runLater(new Runnable() {
 
-                            @Override
-                            public void run() {
-                                Alert alert = new Alert(Alert.AlertType.NONE);
-                                alert.setTitle("Possibile malfunzionamento Sensore");
-                                alert.setContentText("Il sensore " + tempor.getNumSensore() + " sembra" +
-                                        " non funzionare correttamente");
-                                ButtonType buttonTypeCancel = new ButtonType("OK", ButtonBar.ButtonData.CANCEL_CLOSE);
-                                alert.getButtonTypes().setAll(buttonTypeCancel);
-                                ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("View/icon.png"));
-
-                                Thread thread = new Thread(() -> {
-                                    try {
-                                        Thread.sleep(2000);
-                                        if (alert.isShowing()) {
-                                            Platform.runLater(() -> alert.close());
-                                        }
-                                    } catch (Exception exp) {
-                                        exp.printStackTrace();
-                                    }
-                                });
-
-                                thread.setDaemon(true);
-                                thread.start();
-                                alert.showAndWait();
-                            }
-                        });
-
-                    }
-                    Table.refresh();
                 }
-                try {
-                    Thread.sleep(300);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
+                return null;
             }
-
-
-        }).start();
+        };
+        Thread t2 = new Thread(task2);
+        t2.setDaemon(false);
+        t2.start();
 
     }
 
@@ -277,15 +292,15 @@ public class DashBoardController implements Initializable {
             }
         }
     }
-    
+
     // bottone logout, riporta alla loginPage
 
     @FXML
     private void logout(ActionEvent Event) throws IOException {
 
         try {
-
             Stage windows = (Stage) rootPane.getScene().getWindow();
+            close = false;
             windows.close();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("loginPage.fxml"));
